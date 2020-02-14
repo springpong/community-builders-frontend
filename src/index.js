@@ -2,13 +2,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from './Screens/Home';
-import About from './Screens/About';
 import Login from './Screens/Login';
-import Profile from './Screens/Volunteer';
-import Users from './Screens/Charity';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Charity from './Screens/Charity';
 import Volunteer from './Screens/Volunteer';
+import Charity from './Screens/Charity';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
 
 const App = () => (
   <Router>

@@ -1,30 +1,31 @@
-import React from 'react';
-import Header from '../Components/Header';
-import About from './About';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import React, { Component } from 'react';
 
-const Volunteer = ({match}) => (
-    <div>
-        <h2> Volunteer </h2>
-        <ul>
-      <li>
-        <Link to={`${match.url}/rendering`}>Rendering with React</Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/components`}>Components</Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/props-v-state`}>Props v. State</Link>
-      </li>
-    </ul>
+const API = 'https://hn.algolia.com/api/v1/search?query=';
+const DEFAULT_QUERY = 'redux';
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hits: [],
+    };
+  }
+  componentDidMount() {
+    fetch(API + DEFAULT_QUERY)
+      .then(response => response.json())
+      .then(data => this.setState({ hits: data.hits }));
+  }
+  render() {
+    const { hits } = this.state;
+    return (
+      <ul>
+        {hits.map(hit =>
+          <li key={hit.objectID}>
+            <a href={hit.url}>{hit.title}</a>
+          </li>
+        )}
+      </ul>
+    );
+  }
+}
 
-    <Route path={`${match.url}/:aboutId`} component={About} />
-    <Route
-      exact
-      path={match.url}
-      render={() => <h3>Please select a topic.</h3>}
-    />
-  </div>
-);
-
-export default Volunteer;
+export default App;
