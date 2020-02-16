@@ -1,7 +1,6 @@
 {
   "name": "sample-app",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open"
@@ -15,8 +14,9 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "webpack": "^2.6.1",
-    "webpack-dev-server": "^3.1.11"
+    "webpack": "^4.8.3",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
     "prop-types": "^15.7.2",
@@ -38,5 +38,14 @@
       "stage-2",
       "react"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bethel-school-of-technology/community-builders-frontend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bethel-school-of-technology/community-builders-frontend/issues"
+  },
+  "homepage": "https://github.com/bethel-school-of-technology/community-builders-frontend#readme",
+  "description": ""
 }
