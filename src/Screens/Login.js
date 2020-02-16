@@ -1,12 +1,8 @@
 import React from 'react';
 import Charity from './Charity';
 
-const Login = () => (
-    <div>
-        <h2> Login </h2>
-    </div>
-);
-function logIn () {
+
+function Login () {
     var UserName = document.getElementById("userName").value;
     var Password = document.getElementById("passWord").value;
     var PostName = UserName + " " + Password;
