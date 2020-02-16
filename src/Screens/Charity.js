@@ -12,11 +12,11 @@ const Charity = () => (
             <label>Phone Number:<input id="phoneNumber" type="tel" /></label><br/>  
             <label>UserName:<input id="userName" type="text" /></label><br/>
             <label>Password:<input id="passWord" type="password" /></label><br/>
+            <button onClick={Signup}>Login</button> <br />        
         </form>
-            <button onClick={Signup}>Signup</button> <br />
             <h1>Charity Login</h1>
-                <label> UserName: <input type="text" id="userName"/></label><br/>
-                <label> Password: <input type="password" id="passWord" /></label><br/>
+                <label> UserName: <input id="userName" type="text" /></label><br/>
+                <label> Password: <input id="passWord" type="password"  /></label><br/>
             <button onClick={Login}>Login</button> <br />
     </div>
 );
