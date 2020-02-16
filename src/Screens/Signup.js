@@ -1,16 +1,13 @@
 import React from 'react';
 import Charity from './Charity';
 
-function signUp () {
-    var CharityName = document.getElementById("charityName").value;
-    var CharityType = document.getElementById("charityType").value;
-    var Email = document.getElementById("email").value;
-    var Address = document.getElementById("address").value;
-    var PhoneNumber = parseInt(document.getElementById("phoneNumber").value);
+const Signup = () => (
+function Signup () {
     var UserName = document.getElementById("userName").value;
     var Password = document.getElementById("passWord").value;
-  
-    document.getElementById("PostFullName").innerHTML = PostFullName;
-    document.getElementById("PostAddress").innerHTML = Address;
-}
+    var PostName = UserName + " " + Password;
+    document.getElementById("PostName").innerHTML = PostName;
+    }
+);
+
 export default Signup;
