@@ -1,5 +1,6 @@
 import React from 'react';
 import Login from './Login';
+import Signup from './Signup';
 
 const Charity = () => (
     <div>
@@ -12,7 +13,7 @@ const Charity = () => (
             <label>Phone Number:<input id="phoneNumber" type="tel" /></label><br/>  
             <label>UserName:<input id="userName" type="text" /></label><br/>
             <label>Password:<input id="passWord" type="password" /></label><br/>
-            <button onClick={Signup}>Login</button> <br />        
+            <button onClick={Signup}>Signup</button> <br />        
         </form>
             <h1>Charity Login</h1>
                 <label> UserName: <input id="userName" type="text" /></label><br/>
