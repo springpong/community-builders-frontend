@@ -11,7 +11,6 @@ module.exports = {
   },
 
   context: resolve(__dirname, "src"),
-
   devtool: "inline-source-maps",
 
   devServer: {
