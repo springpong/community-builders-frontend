@@ -4,17 +4,13 @@ const Home = () => (
     <div>
         <h1>I'm a Charity</h1>
         <nav>
-            <ul>
-                <li><a href="/Signup">Signup</a></li>
-                <li><a href="/Login">Login</a></li>
-            </ul>
+            <a href="/Signup">Signup</a><br/>
+            <a href="/Login">Login</a>
         </nav>
         <h2>I'm a Volunteer</h2>
         <nav>
-            <ul>
-                <li><a href="/CharityList">Charities</a></li>
-                <li><a href="/Search">Search</a></li>
-            </ul>
+            <a href="/CharityList">Charities</a><br/>
+            <a href="/Search">Search</a>
         </nav>
         
         <h2> Details about Community Builders goes here </h2>
