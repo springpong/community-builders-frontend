@@ -12,27 +12,16 @@ class Login extends React.Component {
       this.onSubmit = this.onSubmit.bind(this);
     }
   
-    onChange = (e) => {       /*
-          Because we named the inputs to match their
-          corresponding values in state, it's
-          super easy to update the state
-        */
+    onChange = (e) => {       
        this.setState({ [e.target.name]: e.target.value });
     }
   
     onSubmit(event) {
-        e.preventDefault();
-        // get our form data out of state
-        const { userName, passWord } = this.state;
-
-        post('/post', { userName, passWord })
-          .then((result) => {
-           console.log (userName,passWord)
-          });
-      }
+      alert('A name was submitted: ' + this.state.userName + this.state.passWord);
+      event.preventDefault();
+    }  
   
     render() {
-        const { userName, passWord } = this.state;
         return (
           <form onSubmit={this.onSubmit}>
            <h1>Charity Login</h1>
@@ -40,14 +29,14 @@ class Login extends React.Component {
             <input
               type="text"
               name="userName"
-              value={userName}
+              value={this.state.userName}
               onChange={this.onChange}
             /><br/>
             Password:
             <input
               type="text"
               name="passWord"
-              value={passWord}
+              value={this.state.passWord}
               onChange={this.onChange}
             /><br/>
             <button type="submit">Submit</button>

@@ -18,27 +18,17 @@ class CharityList extends React.Component {
       this.onSubmit = this.onSubmit.bind(this);
     }
   
-    onChange = (e) => {       /*
-          Because we named the inputs to match their
-          corresponding values in state, it's
-          super easy to update the state
-        */
+    onChange = (e) => {    
        this.setState({ [e.target.name]: e.target.value });
     }
   
     onSubmit(event) {
-        e.preventDefault();
-        // get our form data out of state
-        const { charityName, charityType, email, address, city, state, zipcode, phoneNumber } = this.state;
-
-        post('/Signup', { charityName, charityType, email, address, city, state, zipcode, phoneNumber })
-          .then((result) => {
-           
-          });
-      }
+      alert('A name was submitted: ' + this.state.charityName);
+      event.preventDefault();
+    }
+  
   
     render() {
-        const { charityName, charityType, email, address, city, state, zipcode, phoneNumber } = this.state;
         return (
           <form onSubmit={this.onSubmit}>
             <h1>Charity List</h1>
@@ -46,56 +36,56 @@ class CharityList extends React.Component {
             <input
               type="text"
               name="charityName"
-              value={charityName}
+              value={this.state.charityName}
               onChange={this.onChange}
             /><br/>
             Charity Type:
             <input
               type="text"
               name="charityType"
-              value={charityType}
+              value={this.state.charityType}
               onChange={this.onChange}
             /><br/>
             Email:
             <input
               type="text"
               name="email"
-              value={email}
+              value={this.state.email}
               onChange={this.onChange}
             /><br/>
             Address:
             <input
               type="text"
               name="address"
-              value={address}
+              value={this.state.address}
               onChange={this.onChange}
             /><br/>
             City:
             <input
               type="text"
               name="city"
-              value={city}
+              value={this.state.city}
               onChange={this.onChange}
             /><br/>
             State:
             <input
               type="text"
               name="state"
-              value={state}
+              value={this.state.state}
               onChange={this.onChange}
             /><br/>
             Zip Code:
             <input
               type="numbers"
               name="zipcode"
-              value={zipcode}
+              value={this.state.zipcode}
               onChange={this.onChange}
             /><br/>
             Phone Number:
             <input
               type="text"
               name="phoneNumber"
-              value={phoneNumber}
+              value={this.state.phoneNumber}
               onChange={this.onChange}
             /><br/>
             <button type="submit">Signup</button>
