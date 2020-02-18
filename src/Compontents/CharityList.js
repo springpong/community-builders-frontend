@@ -1,20 +1,97 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const CharityList = () => (
-    <div>
-        <h1>Charity Information</h1>
-        <form>
-            <label>Charity Name:<input id="charityName" name="charityname" type="text" /></label><br/>
-            <label>Charity Type:<input id="charityType" name="charitytype" type="text" /></label><br/>
-            <label>Email:<input id="email" name="email" type="email" /></label><br/>
-            <label>Address:<input id="address" name="address" type="text" /></label><br/>
-            <label>City:<input id="city" name="city" type="text"  /></label><br/>
-            <label>State:<input id="state" name="state" type="text"  /></label><br/>
-            <label>Zipcode:<input id="zipcode" name="zipcode" type="number"  /></label><br/>
-            <label>Phone Number:<input id="phoneNumber" name="phonenumber" type="tel" /></label><br/>  
-            <button onClick={CharityList}>Charities</button> <br />        
-        </form>
-    </div>
-);
-
+class CharityList extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        charityName: '',
+        charityType: '',
+        email: '',
+        address:'',
+        city: '', 
+        state: '', 
+        zipcode: '',
+        phoneNumber:'',
+      };
+  
+      this.onChange = this.onChange.bind(this);
+      this.onSubmit = this.onSubmit.bind(this);
+    }
+  
+    onChange = (e) => {    
+       this.setState({ [e.target.name]: e.target.value });
+    }
+  
+    onSubmit(event) {
+      alert('A name was submitted: ' + this.state.charityName);
+      event.preventDefault();
+    }
+  
+  
+    render() {
+        return (
+          <form onSubmit={this.onSubmit}>
+            <h1>Charity List</h1>
+            Charity Name:
+            <input
+              type="text"
+              name="charityName"
+              value={this.state.charityName}
+              onChange={this.onChange}
+            /><br/>
+            Charity Type:
+            <input
+              type="text"
+              name="charityType"
+              value={this.state.charityType}
+              onChange={this.onChange}
+            /><br/>
+            Email:
+            <input
+              type="text"
+              name="email"
+              value={this.state.email}
+              onChange={this.onChange}
+            /><br/>
+            Address:
+            <input
+              type="text"
+              name="address"
+              value={this.state.address}
+              onChange={this.onChange}
+            /><br/>
+            City:
+            <input
+              type="text"
+              name="city"
+              value={this.state.city}
+              onChange={this.onChange}
+            /><br/>
+            State:
+            <input
+              type="text"
+              name="state"
+              value={this.state.state}
+              onChange={this.onChange}
+            /><br/>
+            Zip Code:
+            <input
+              type="numbers"
+              name="zipcode"
+              value={this.state.zipcode}
+              onChange={this.onChange}
+            /><br/>
+            Phone Number:
+            <input
+              type="text"
+              name="phoneNumber"
+              value={this.state.phoneNumber}
+              onChange={this.onChange}
+            /><br/>
+            <button type="submit">Signup</button>
+          </form>
+        );
+      }
+    }
+  
 export default CharityList;
