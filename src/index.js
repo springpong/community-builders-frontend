@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 const App = () => (
   <Router>
-    <div>
+    <h1>
           <Link to="/">Home</Link>
           <Link to="/Charity">Charity</Link>
           <Link to="/Volunteer">Volunteer</Link>
@@ -17,7 +17,7 @@ const App = () => (
       <Route exact path="/" component={Home} />
       <Route exact path="/Charity" component={Charity} />
       <Route path="/Volunteer" component={Volunteer} />
-    </div>
+    </h1>
   </Router>
 );
 

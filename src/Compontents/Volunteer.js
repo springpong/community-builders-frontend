@@ -30,8 +30,8 @@ class List extends React.Component {
   
     render() {
         return (
-          <form onSubmit={this.onSubmit}>
-            <h1>Charity List</h1>
+          <form id="list" onSubmit={this.onSubmit}>
+            <h2>Charity List</h2>
             Charity Type:
             <input
               type="text"
@@ -116,8 +116,15 @@ class List extends React.Component {
       
         render() {
             return (
-              <form onSubmit={this.onSubmit}>
-               <h1>Charity Search</h1>
+              <form id="search" onSubmit={this.onSubmit}>
+               <h2>Charity Search</h2>
+               Charity Type:
+                <input
+                  type="text"
+                  name="charityType"
+                  value={this.state.charityType}
+                  onChange={this.onChange}
+                /><br/>
                 Charity Name:
                 <input
                   type="text"
@@ -125,14 +132,7 @@ class List extends React.Component {
                   value={this.state.charityName}
                   onChange={this.onChange}
                 /><br/>
-                Charity Type:
-                <input
-                  type="text"
-                  name="charityType"
-                  value={this.state.charityType}
-                  onChange={this.onChange}
-                /><br/>
-                <button type="submit">Submit</button>
+                <button type="submit">Search</button>
               </form>
             );
           }

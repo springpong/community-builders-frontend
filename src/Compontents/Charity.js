@@ -31,15 +31,8 @@ class Signup extends React.Component {
       
         render() {
             return (
-              <form onSubmit={this.onSubmit}>
-                <h1>Charity Signup</h1>
-                Charity Name:
-                <input
-                  type="text"
-                  name="charityName"
-                  value={this.state.charityName}
-                  onChange={this.onChange}
-                /><br/>
+              <form id="signup" onSubmit={this.onSubmit}>
+                <h2>Charity Signup</h2>
                 Charity Type:
                 <input
                   type="text"
@@ -47,9 +40,16 @@ class Signup extends React.Component {
                   value={this.state.charityType}
                   onChange={this.onChange}
                 /><br/>
-                Email:
+                Charity Name:
                 <input
                   type="text"
+                  name="charityName"
+                  value={this.state.charityName}
+                  onChange={this.onChange}
+                /><br/>
+                Email:
+                <input
+                  type="email"
                   name="email"
                   value={this.state.email}
                   onChange={this.onChange}
@@ -84,7 +84,7 @@ class Signup extends React.Component {
                 /><br/>
                 Phone Number:
                 <input
-                  type="text"
+                  type="tel"
                   name="phoneNumber"
                   value={this.state.phoneNumber}
                   onChange={this.onChange}
@@ -98,7 +98,7 @@ class Signup extends React.Component {
                 /><br/>
                 Password:
                 <input
-                  type="text"
+                  type="password"
                   name="passWord"
                   value={this.state.passWord}
                   onChange={this.onChange}
@@ -132,8 +132,8 @@ class Login extends React.Component {
           
             render() {
                 return (
-                  <form onSubmit={this.onSubmit}>
-                   <h1>Charity Login</h1>
+                  <form id="login" onSubmit={this.onSubmit}>
+                   <h2>Charity Login</h2>
                     UserName:
                     <input
                       type="text"
@@ -143,7 +143,7 @@ class Login extends React.Component {
                     /><br/>
                     Password:
                     <input
-                      type="text"
+                      type="password"
                       name="passWord"
                       value={this.state.passWord}
                       onChange={this.onChange}
