@@ -1,29 +1,93 @@
-header {
-    background-color: rgb(245, 245, 245);
-    color: rgb(51, 51, 51);
-    font-family: 'Playfair Display', serif;
-    font-size: 75px;
-    font-weight: 500;
-    padding-top: 10px;
-    text-align: left;
-    display: inline;
+img {
+  width: 120px;
+  height: 120px;
 }
 
-img {
-    border-radius: 15px;
-    width: 120px;
-    height: 80px;
-    background-image: auto;
-    margin-left: auto;
-    text-align: left;
+.clink {
+  float: left;
+}
+
+.elink {
+  float: right;
+  padding: 25px;
+}
+
+form.example input[type=text] {
+  padding: 5px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 70%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 body{
     background-color: rgb(194, 65, 65);
-     text-align: center;
+    text-align: center;
 }
 
- #list {
+a {
+    background-color: #808080;
+    color: white;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+    font-family: 'Marcellus', serif;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 10 50px;
+}
+
+a:hover {
+    background-color: #ff8c00;
+    color: black;
+}
+
+.about {
+    background-color: #dcdcdc;
+    border: 1px solid black;
+    text-align: center;
+    padding: 40px;
+    margin: auto;
+    height: auto;
+    width: 700px;
+    border-radius: 15px;
+}
+
+/* charity page css*/
+label {
+    float: left;
+}
+
+input {
+    float: right;
+    width: auto;
+    height: 30px;
+}
+
+#update {
     float: left;
     height: auto;
     width: auto;
@@ -31,7 +95,7 @@ body{
     color: white;
 }
 
-#search {
+#delete {
     float: right;
     height: auto;
     width: auto;
@@ -54,30 +118,19 @@ body{
     text-align:center;
     color: white;
 }
-a {
-    background-color: #808080;
-    color: white;
-    border: none;
-    margin: 10px;
-    cursor: pointer;
-    font-family: 'Marcellus', serif;
-    font-weight: bold;
-    border-radius: 12px;
-    padding: 10 500px;
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-a:hover {
-    background-color: #ff8c00;
-    color: black;
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 2px;
 }
 
-.about {
-    background-color: #dcdcdc;
-    border: 1px solid black;
-    text-align: center;
-    padding: 40px;
-    margin: auto;
-    height: auto;
-    width: 700px;
-    border-radius: 15px;
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
