@@ -122,7 +122,8 @@ class Delete extends Component {
   componentDidMount (){
       this.callAPI();
   }
-  
+
+
   render() {
     const { hits } = this.state;
     return (
