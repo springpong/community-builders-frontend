@@ -1,33 +1,51 @@
-header {
-    background-color: rgb(245, 245, 245);
-    color: rgb(51, 51, 51);
-    font-family: 'Playfair Display', serif;
-    font-size: 75px;
-    font-weight: 500;
-    padding-top: 10px;
-    text-align: left;
-    display: inline;
+img {
+  width: 120px;
+  height: 120px;
 }
 
-img {
-    border-radius: 15px;
-    width: 120px;
-    height: 80px;
-    background-image: auto;
-    margin-left: auto;
-    text-align: left;
+.clink {
+  float: left;
+}
+
+.elink {
+  float: right;
+  padding: 25px;
+}
+
+form.example input[type=text] {
+  padding: 5px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 70%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 body{
-    background-color: rgb(245, 245, 245);
-     text-align: center;
-}
-
-h2 {
-    border-radius:  auto;
-    background-color: blue;
-    font-family: 'Cantata One', serif;
-    font-weight: bolder;
+    background-color: rgb(194, 65, 65);
+    text-align: center;
 }
 
 a {
@@ -39,7 +57,7 @@ a {
     font-family: 'Marcellus', serif;
     font-weight: bold;
     border-radius: 12px;
-    padding: 10 500px;
+    padding: 10 50px;
 }
 
 a:hover {
@@ -53,15 +71,66 @@ a:hover {
     text-align: center;
     padding: 40px;
     margin: auto;
-    height: 100px;
+    height: auto;
     width: 700px;
     border-radius: 15px;
 }
 
-footer {
-    display: inline-block;
-    background-color: lightgray;
-    padding: 0px 20px;
-    border: 1px solid black;
-    border-radius: 41p201x;
+/* charity page css*/
+label {
+    float: left;
+}
+
+input {
+    float: right;
+    width: auto;
+    height: 30px;
+}
+
+#update {
+    float: left;
+    height: auto;
+    width: auto;
+    text-align:center;
+    color: white;
+}
+
+#delete {
+    float: right;
+    height: auto;
+    width: auto;
+    text-align:center;
+    color: white;
+}
+
+#signup {
+    float: left;
+    height: auto;
+    width: auto;
+    text-align:center;
+    color: white;
+}
+
+#login {
+    float: right;
+    height: auto;
+    width: auto;
+    text-align:center;
+    color: white;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 2px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
