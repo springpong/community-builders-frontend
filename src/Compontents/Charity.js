@@ -129,7 +129,7 @@ class Login extends React.Component {
   };
 
   onSubmit(event) {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch("localhost:8080/api/charity/user/username")
         .then( response => response.json())
         .then(
             // handle the result
@@ -154,7 +154,7 @@ class Login extends React.Component {
     return (
       <form id="login" onSubmit={this.onSubmit}>
         <h2>Charity Login</h2>
-        <label>UserName:</label>
+        <label>UserNameukdj:</label>
         <input
           type="text"
           name="userName"
