@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import NavBar from "./NavBar";
 
 class Signup extends React.Component {
   constructor(props) {
@@ -33,16 +34,40 @@ class Signup extends React.Component {
 
   render() {
     return (
+      <div><NavBar />
       <form id="signup" onSubmit={this.onSubmit}>
         <h2>Charity Signup</h2>
-        <label>Charity Type:</label>
+        <label>UserName:</label>
+        <br />
         <input
+          type="text"
+          name="userName"
+          value={this.state.userName}
+          onChange={this.onChange}/>
+        <br />
+        <label>Password:</label>
+        <br />
+        <input
+          type="password"
+          name="passWord"
+          value={this.state.passWord}
+          onChange={this.onChange}/>
+        <br />
+        <label>Charity Type:</label>
+        <br />
+        <select
           type="text"
           name="charityType"
           value={this.state.charityType}
-          onChange={this.onChange}/>
+          onChange={this.onChange}>
+            <option value = "FoodPantry">Food Pantry</option>
+            <option value = "Homeless shelter">Homeless Shelter</option>
+            <option value = "Soup Kitchen">Soup Kitchen</option>
+            <option value = "Other">Other</option>
+        </select>    
         <br />
         <label>Charity Name:</label>
+        <br />
         <input
           type="text"
           name="charityName"
@@ -50,6 +75,7 @@ class Signup extends React.Component {
           onChange={this.onChange}/>
         <br />
         <label>Email:</label>
+        <br />
         <input
           type="email"
           name="email"
@@ -57,6 +83,7 @@ class Signup extends React.Component {
           onChange={this.onChange}/>
         <br />
         <label>Address:</label>
+        <br />
         <input
           type="text"
           name="address"
@@ -64,6 +91,7 @@ class Signup extends React.Component {
           onChange={this.onChange}/>
         <br />
         <label>City:</label>
+        <br />
         <input
           type="text"
           name="city"
@@ -71,6 +99,7 @@ class Signup extends React.Component {
           onChange={this.onChange}/>
         <br />
         <label>State:</label>
+        <br />
         <input
           type="text"
           name="state"
@@ -79,6 +108,7 @@ class Signup extends React.Component {
         />
         <br />
         <label>Zip Code:</label>
+        <br />
         <input
           type="numbers"
           name="zipcode"
@@ -86,101 +116,25 @@ class Signup extends React.Component {
           onChange={this.onChange}/>
         <br />
         <label>Phone Number:</label>
+        <br />
         <input
           type="tel"
           name="phoneNumber"
           value={this.state.phoneNumber}
           onChange={this.onChange}/>
         <br />
-        <label>UserName:</label>
-        <input
-          type="text"
-          name="userName"
-          value={this.state.userName}
-          onChange={this.onChange}/>
-        <br />
-        <label>Password:</label>
-        <input
-          type="password"
-          name="passWord"
-          value={this.state.passWord}
-          onChange={this.onChange}/>
-        <br />
-        <button type="submit">Signup</button>
+        <button id="signupbutton" type="submit">Signup</button>
       </form>
+    </div>
     );
   }
 }
 
-class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      userName: "",
-      passWord: ""
-    };
-
-    this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-  }
-
-  onChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
-
-  onSubmit(event) {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-        .then( response => response.json())
-        .then(
-            // handle the result
-            (result) => {
-                this.setState({
-                    isLoaded : true,
-                    posts : result
-                });
-            },
-
-            // Handle error 
-            (error) => {
-                this.setState({
-                    isLoaded: true,
-                    error
-                })
-            },
-        )
-    };
-
-  render() {
-    return (
-      <form id="login" onSubmit={this.onSubmit}>
-        <h2>Charity Login</h2>
-        <label>UserName:</label>
-        <input
-          type="text"
-          name="userName"
-          value={this.state.userName}
-          onChange={this.onChange}
-        />
-        <br />
-        <label>Password:</label>
-        <input
-          type="password"
-          name="passWord"
-          value={this.state.passWord}
-          onChange={this.onChange}
-        />
-        <br />
-        <button type="submit">Submit</button>
-      </form>
-    );
-  }
-}
 class Charity extends React.Component {
   render() {
     return (
       <div>
         <Signup />
-        <Login />
       </div>
     );
   }
