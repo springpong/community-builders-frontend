@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-const cors = require("cors");
 class Update extends Component {
   constructor(props) {
     super(props);
