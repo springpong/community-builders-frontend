@@ -4,8 +4,7 @@
   "description": "Front-end using React",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open",
-    "build": "postcss public/css/tailwind.css -o public/build/tailwind.css"
+    "start": "webpack-dev-server --open"
   },
   "keywords": [],
   "author": "",
@@ -27,8 +26,7 @@
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "redux": "^3.7.0",
-    "reselect": "^3.0.1",
-    "tailwindcss": "^1.2.0"
+    "reselect": "^3.0.1"
   },
   "babel": {
     "presets": [
