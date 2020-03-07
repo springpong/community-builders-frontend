@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NavBar from "./NavBar";
 
-class Signup extends React.Component {
+class CharitySignup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -130,14 +130,4 @@ class Signup extends React.Component {
   }
 }
 
-class Charity extends React.Component {
-  render() {
-    return (
-      <div>
-        <Signup />
-      </div>
-    );
-  }
-}
-
-export default Charity;
+export default CharitySignup;

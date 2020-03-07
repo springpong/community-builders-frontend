@@ -1,5 +1,3 @@
-
-
 .clink {
   float: left;
   border-style: double;
@@ -16,37 +14,13 @@
   padding-top: -2ex;
 }
 
-form.example input[type=text] {
-  padding: 5px;
-  font-size: 17px;
-  border: 1px solid grey;
-  float: left;
-  width: 70%;
-  background: whitesmoke;
+.elink {
+  float: center;
+  border-style: double;
+  border-radius: 2ex;
+  padding-bottom: 2ex;
+  padding-top: -2ex;
 }
-
-form.example button {
-  float: left;
-  width: 20%;
-  padding: 10px;
-  background: #2196F3;
-  color: white;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-left: none;
-  cursor: pointer;
-}
-
-form.example button:hover {
-  background: #0b7dda;
-}
-
-form.example::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
 body{
     background-color:white;
     text-align: center;

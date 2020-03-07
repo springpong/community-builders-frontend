@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NavBar from "./NavBar";
 
-class CharityLogin extends React.Component {
+class VolLogin extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -44,7 +44,7 @@ class CharityLogin extends React.Component {
         <div>
           <NavBar />
         <form id="login" onSubmit={this.onSubmit}>
-          <h2>Charity Login</h2>
+          <h2>Volunteer Login</h2>
           <label>UserName:</label>
           <br />
           <input
@@ -70,4 +70,4 @@ class CharityLogin extends React.Component {
     }
   }
   
-  export default CharityLogin;
+  export default VolLogin;
