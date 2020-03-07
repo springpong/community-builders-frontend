@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-const cors = require("cors");
 class Update extends Component {
   constructor(props) {
     super(props);
@@ -8,7 +7,7 @@ class Update extends Component {
   }
 
   callAPI() {
-    fetch("http://localhost:8080/api/charity/user")
+    fetch("http://localhost:8081/api/charity/user")
       .then(response => response.json())
       .then(data => this.setState({ apiResponse: res }))
       .catch(err => err);
