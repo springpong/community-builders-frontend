@@ -27,7 +27,7 @@ body{
 }
 
 a {
-    color: white;
+    color: rgb(133, 64, 64);
     border: none;
     margin: 10px;
     cursor: pointer;

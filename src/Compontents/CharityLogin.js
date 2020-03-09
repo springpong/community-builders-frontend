@@ -5,39 +5,15 @@ class CharityLogin extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        userName: "",
-        passWord: ""
+          posts:[]
       };
-  
-      this.onChange = this.onChange.bind(this);
-      this.onSubmit = this.onSubmit.bind(this);
     }
   
-    onChange = e => {
-      this.setState({ [e.target.name]: e.target.value });
+    componentDidMount () {
+      fetch('localhost:8080/api/charity/username')
+        .then(response => response.json())
+        .then(data => this.setState({ posts: data.posts }));
     };
-  
-    onSubmit(event) {
-      fetch("http://localhost:8081/api/charity/user")
-          .then( response => response.json())
-          .then(
-              // handle the result
-              (result) => {
-                  this.setState({
-                      isLoaded : true,
-                      posts : result
-                  });
-              },
-  
-              // Handle error 
-              (error) => {
-                  this.setState({
-                      isLoaded: true,
-                      error
-                  })
-              },
-          )
-      };
   
     render() {
       return (
@@ -63,8 +39,8 @@ class CharityLogin extends React.Component {
             onChange={this.onChange}
           />
           <br />
-          <a href="http://localhost:8080/CharityProfile" target="_self">Signin</a>
-        </form>
+          <button id="signupbutton" type="submit">Signup</button>
+        </form> 
       </div>
       );
     }

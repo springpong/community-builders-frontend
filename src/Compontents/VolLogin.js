@@ -63,7 +63,7 @@ class VolLogin extends React.Component {
             onChange={this.onChange}
           />
           <br />
-          <a href="http://localhost:8080/CharityProfile" target="_self">Signin</a>
+          <button id="signupbutton" type="submit">Signup</button>
         </form>
       </div>
       );

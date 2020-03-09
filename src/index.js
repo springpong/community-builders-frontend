@@ -13,7 +13,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 const App = () => (
   <Router>
-    <h1>
+    <div>
       <Route exact path="/" component={Home} />
       <Route exact path="/CharitySignup" component={CharitySignup} />
       <Route exact path="/CharityLogin" component={CharityLogin} />
@@ -22,7 +22,7 @@ const App = () => (
       <Route exact path="/CharityView" component={CharityView} />
       <Route exact path="/VolSignup" component={VolSignup} />
       <Route exact path="/VolLogin" component={VolLogin} />
-    </h1>
+    </div>
   </Router>
 );
 

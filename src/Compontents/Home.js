@@ -15,7 +15,7 @@ const Home = () => (
     </div>
     <div className="vlink">
       <h3>I'm a Volunteer</h3>
-      <a href="http://localhost:8080/VolSignup" target="_self">SignUp</a>
+      <a href="http://localhost:8080/VolSignup" target="blank">SignUp</a>
       <a href="http://localhost:8080/VolLogin" target="_self">Login</a>
     </div>
     <h1 className="head">Community Builders</h1>

@@ -16,7 +16,7 @@ class CharityEvent extends React.Component {
     };
 
     this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   onChange = e => {
@@ -24,7 +24,7 @@ class CharityEvent extends React.Component {
   };
 
   componentDidMount () {
-    fetch ("https://localhost8080/api/charity/events")
+    fetch ("https://localhost8080/api/events")
       .then(res => res.json())
       .then(data => this.setState({posts: data}));
   }
@@ -46,15 +46,15 @@ class CharityEvent extends React.Component {
         {this.state.posts.map((item,index) => (
           <div key={index}>
         <tr>
-          <td>item.charityName </td>
-          <td>item.eventName </td>
-          <td>item.eventAddress</td>
-          <td>item.eventCity </td>
-          <td>item.eventState</td>
-          <td>item.Zipcode</td>
-          <td>item.Date </td>
-          <td>item.eventTime</td>
-          <td>item.eventDescription</td>
+          <td>{item.charityName} </td>
+          <td>{item.eventName} </td>
+          <td>{item.eventAddress} </td>
+          <td>{item.eventCity} </td>
+          <td>{item.eventState} </td>
+          <td>{item.Zipcode} </td>
+          <td>{item.Date} </td>
+          <td>{item.eventTime} </td>
+          <td>{item.eventDescription} </td>
         </tr>
         </div>
         ))}
