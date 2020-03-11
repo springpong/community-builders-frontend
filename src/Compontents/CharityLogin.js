@@ -5,20 +5,22 @@ class CharityLogin extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-          posts:[]
+        posts: [],
       };
-    }
-  
-    componentDidMount () {
-      fetch('localhost:8080/api/charity/username')
-        .then(response => response.json())
-        .then(data => this.setState({ posts: data.posts }));
     };
+
+  onSubmit = (e) => {
+      fetch('http://localhost:8081/api/charity/user',{    
+        mode: "no-cors",
+      })
+        .then(response => response.json())
+        .then(data => this.setState({posts: data}));
+      };
   
     render() {
       return (
         <div>
-          <NavBar />
+        <NavBar />
         <form id="login" onSubmit={this.onSubmit}>
           <h2>Charity Login</h2>
           <label>UserName:</label>
@@ -41,9 +43,16 @@ class CharityLogin extends React.Component {
           <br />
           <button id="signupbutton" type="submit">Signup</button>
         </form> 
+      <div>
+        {this.state.posts.map((item, index) => (
+          <div key={index}>
+            <h1>{item.userName}</h1>
+            <h1>{item.passWord}</h1>
+          </div>
+        ))}
       </div>
-      );
-    }
+      </div>
+     )}
   }
   
   export default CharityLogin;

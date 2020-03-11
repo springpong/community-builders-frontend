@@ -25,11 +25,21 @@ class VolSignup extends React.Component {
   };
 
   onSubmit(event) {
-    alert(
-      "A name was submitted: " + this.state.VolName + this.state.Volcity
-    );
-    event.preventDefault();
-  }
+    const data = { username: 'example' };
+    fetch('https:localhost:8080/api/Volunteer', {
+    method: 'POST', // or 'PUT'
+    headers: {
+    'Content-Type': 'application/json',
+  },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log('Success:', data);
+  })
+    .catch((error) => {
+    console.error('Error:', error);
+  })};
 
   render() {
     return (

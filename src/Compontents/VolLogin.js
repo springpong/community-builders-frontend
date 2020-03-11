@@ -1,43 +1,27 @@
 import React, { Component } from "react";
 import NavBar from "./NavBar";
 
+const data = { username: 'example' };
 class VolLogin extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        userName: "",
-        passWord: ""
+       hits: [],
       };
-  
+
       this.onChange = this.onChange.bind(this);
-      this.onSubmit = this.onSubmit.bind(this);
+      this.componentDidMount = this.componentDidMount.bind(this);
     }
   
     onChange = e => {
       this.setState({ [e.target.name]: e.target.value });
     };
   
-    onSubmit(event) {
-      fetch("http://localhost:8081/api/charity/user")
-          .then( response => response.json())
-          .then(
-              // handle the result
-              (result) => {
-                  this.setState({
-                      isLoaded : true,
-                      posts : result
-                  });
-              },
-  
-              // Handle error 
-              (error) => {
-                  this.setState({
-                      isLoaded: true,
-                      error
-                  })
-              },
-          )
-      };
+    componentDidMount(event) {
+      fetch('https://localhost:8080/VolSignup') 
+        .then(response => response.json())
+      .then(data => this.setState({ hits: data.hits }))
+  }
   
     render() {
       return (
