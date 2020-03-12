@@ -1,29 +1,46 @@
 import React, { Component } from "react";
+import ApiService from "./ApiService"
 
 class CharityView extends Component {
   constructor(props) {
     super(props);
-    this.state = {apiResponse: ''    };
+    this.state = {
+      username: '',
+      charityName: '',
+      charityStreet: '',
+      charityCity: ''
+     }
+     this.loadUser = this.loadUser.bind(this);
   }
 
-  callAPI() {
-    fetch("http://localhost:8080/api/charity/user")
-      .then(response => response.json())
-      .then(data => this.setState({ apiResponse: res }))
-      .catch(err => err);
-  }
+  componentDidMount() {
+    this.loadUser();
+}
 
-  componentDidMount (){
-      this.callAPI();
-  }
+loadUser() {
+  ApiService.fetchUserByUsername(window.localStorage.getItem("username"))
+            .then((res) =>{
+              let user = res.data.result;
+              this.setState({
+                username: user.username,
+                charityName: user.charityName,
+                charityStreet: user.charityStreet,
+                charityCity: user.charityCity
+              })
+            });
+}
+
 
 render(){
     return (
     <div>
         <h3>Charity Profile</h3>
-        <h5>Charity Name:</h5>
-        <p name='charityName'
-        value={this.state.charityName}></p>
+        <form>
+        <TextField type="text" placeholder="username" fullWidth margin="normal" name="username" readonly="true" value={this.state.username}/>
+        <TextField type="text" placeholder="Charity Name" fullWidth margin="normal" name="charityName" readonly="true" value={this.state.charityName}/>
+        <TextField type="text" placeholder="Charity Street" fullWidth margin="normal" name="charityStreet" readonly="true" value={this.state.charityStreet}/>
+        <TextField type="text" placeholder="Charity City" fullWidth margin="normal" name="charityCity" readonly="true" value={this.state.charityCity}/>
+        </form>
     </div>
     )
 }}
