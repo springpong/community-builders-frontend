@@ -27,7 +27,7 @@ const Home = () => (
     </div>
     <div className="elink">
         <h3>EventsPage</h3>
-        <a href="http://localhost:8080/CharityEvent" target="_self">Search</a>
+        <a href="http://localhost:8080/CharityView" target="_self">Search</a>
     </div>
   </div>
 );

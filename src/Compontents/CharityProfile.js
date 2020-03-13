@@ -7,7 +7,7 @@ class Update extends Component {
   }
 
   callAPI() {
-    fetch("http://localhost:8081/api/charity/user")
+    fetch("http://localhost:8081/api/charity/user/mack")
       .then(response => response.json())
       .then(data => this.setState({ apiResponse: res }))
       .catch(err => err);
