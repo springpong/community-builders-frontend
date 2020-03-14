@@ -31,7 +31,7 @@ class CharitySignup extends Component{
     }
 
     onChange = (e) =>
-        this.setState({ [e.target.name]: e.target.value });
+        this.setState({[e.target.name]: e.target.value });
 
     render() {
         return(
@@ -41,52 +41,52 @@ class CharitySignup extends Component{
                 <form>
                 <div className="form-group">
                     <label>User Name:</label>
-                    <input type="text"  name="username" className="form-control" value={this.state.value} onChange={this.onChange}/>
+                    <input type="text"  name="username" className="form-control" value={this.state.username} onChange={this.onChange}/>
                 </div>
 
                 <div className="form-group">
                     <label>Password:</label>
-                    <input type="password"  name="password" className="form-control" value={this.state.value} onChange={this.onChange}/>
+                    <input type="password"  name="password" className="form-control" value={this.state.Password} onChange={this.onChange}/>
                 </div>
 
                 <div className="form-group">
                     <label>Charity Title:</label>
-                    <input  type="text" name="Ctype" className="form-control" value={this.state.value} onChange={this.onChange}/>
+                    <input  type="text" name="charityTitle" className="form-control" value={this.state.charityTitle} onChange={this.onChange}/>
                 </div>
 
                 <div className="form-group">
                     <label>Charity Name:</label>
-                    <input type="text" name="Cname" className="form-control" value={this.state.value} onChange={this.onChange}/>
+                    <input type="text" name="charityName" className="form-control" value={this.state.charityName} onChange={this.onChange}/>
                 </div>
 
                 <div className="form-group">
                     <label>Charity Cat:</label>
-                    <input type="text"  name="Ccat" className="form-control" value={this.state.value} onChange={this.onChange}/>
+                    <input type="text"  name="charityCat" className="form-control" value={this.state.charityCat} onChange={this.onChange}/>
                 </div>
 
                 <div className="form-group">
                     <label>Charity Street:</label>
-                    <input  type="text" name="Cstreet" className="form-control" value={this.state.value} onChange={this.onChange}/>
+                    <input  type="text" name="charityStreet" className="form-control" value={this.state.charityStreet} onChange={this.onChange}/>
                 </div>
                 
                 <div className="form-group">
                     <label>Charity City:</label>
-                    <input type="text" name="Ccity" className="form-control" value={this.state.value} onChange={this.onChange}/>
+                    <input type="text" name="charityCity" className="form-control" value={this.state.charityCity} onChange={this.onChange}/>
                 </div>
 
                 <div className="form-group">
                     <label>Charity State:</label>
-                    <input type="text" name="Cstate" className="form-control" value={this.state.value} onChange={this.onChange}/>
+                    <input type="text" name="charityState" className="form-control" value={this.state.charityState} onChange={this.onChange}/>
                 </div>
 
                 <div className="form-group">
                     <label>Charity Zipcode:</label>
-                    <input type="text"  name="Czip" className="form-control" value={this.state.value} onChange={this.onChange}/>
+                    <input type="text"  name="charityZip" className="form-control" value={this.state.charityZip} onChange={this.onChange}/>
                 </div>
 
                 <div className="form-group">
                     <label>Charity Phone:</label>
-                    <input type="text"  name="Cphone" className="form-control" value={this.state.value} onChange={this.onChange}/>
+                    <input type="text"  name="charityPhone" className="form-control" value={this.state.charityPhone} onChange={this.onChange}/>
                 </div>
 
                 <button className="btn btn-success" onClick={this.saveUser}>Update</button>

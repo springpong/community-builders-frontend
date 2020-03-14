@@ -1,15 +1,15 @@
 import axios from 'axios';
 
-const USER_API_BASE_URL = 'http://localhost:8081/api/charity';
+const USER_API_BASE_URL = 'http://localhost:8081/api/charity/user';
 
 class ApiService {
 
     fetchUsers() {
-        return axios.get(USER_API_BASE_URL +'/user/{username}');
+        return axios.get(USER_API_BASE_URL);
     }
 
-    fetchUserById(userId) {
-        return axios.get(USER_API_BASE_URL + '/user/{Id}' + userId);
+    fetchUsername(username) {
+        return axios.get(USER_API_BASE_URL + '/' + username);
     }
 
     deleteUser(userId) {
@@ -17,7 +17,7 @@ class ApiService {
     }
 
     addUser(user) {
-        return axios.post(""+USER_API_BASE_URL +'/user', user);
+        return axios.post(""+USER_API_BASE_URL, user);
     }
 
     editUser(user) {

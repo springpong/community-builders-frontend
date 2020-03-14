@@ -6,51 +6,49 @@ class CharityLogin extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Id: "",
+      id: "",
       username: "",
       password: "",
     };
     this.saveUser = this.saveUser.bind(this);
-    this.loadUser = this.loadUser.bind(this);
-  }
+        this.loadUser = this.loadUser.bind(this);
+    }
 
-  componentDidMount() {
-    this.loadUser();
-  }
+    componentDidMount() {
+        this.loadUser();
+    }
 
-  loadUser() {
-    ApiService.fetchUserById(window.localStorage.getItem("userId")).then(
-      res => {
-        let user = res.data;
+    loadUser() {
+        ApiService.fetchUsername()
+    .then( res => {
+        let username = res.data;
         this.setState({
-          id: user.Id,
-          username: user.username,
-          password: user.password,
+          id: username.id,
+          username: username.username,
+          password: username.password,
         });
+        console.log(this.state); 
+      })
+        
       }
-    );
+  
+      onChange = (e) =>
+      this.setState({ [e.target.name]: e.target.value });
+
+  saveUser = (e) => {
+      e.preventDefault();
+      let user = {id: this.state.id, password: this.state.password, firstName: this.state.firstName, lastName: this.state.lastName, age: this.state.age, salary: this.state.salary};
+      ApiService.editUser(user)
+          .then(res => {
+              this.setState({message : 'User added successfully.'});
+              this.props.history.push('/CharityProfile');
+          });
   }
-
-  onChange = e => this.setState({ [e.target.name]: e.target.value });
-
-  saveUser = e => {
-    e.preventDefault();
-    let user = {
-      id: this.state.id,      
-      username: this.state.username,
-      password: this.state.password,
-    };
-    ApiService.editUser(user).then(res => {
-      this.setState({ message: "User added successfully." });
-      this.props.history.push("/CharityProfile");
-    });
-  };
-
   render() {
     return (
       <div>
         <NavBar />
-        <h2 className="text-center">Edit User</h2>
+        <h2 className="text-center">Charity Login</h2>
         <form>
         <div className="form-group">
             <label>User Name:</label>

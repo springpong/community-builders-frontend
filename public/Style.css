@@ -6,16 +6,9 @@
   padding-top: -2ex;
 }
 
-.vlink {
-  float: right;
-  border-style: double;
-  border-radius: 2ex;
-  padding-bottom: 2ex;
-  padding-top: -2ex;
-}
 
 .elink {
-  float: center;
+  float: right;
   border-style: double;
   border-radius: 2ex;
   padding-bottom: 2ex;
@@ -151,7 +144,7 @@ select {
     color:black;
 }
 
-/*  ?  */
+/* CharityView  */
 
 table {
   font-family: arial, sans-serif;
