@@ -1,18 +1,6 @@
-.clink {
-  float: left;
-  border-style: double;
-  border-radius: 2ex;
-  padding-bottom: 2ex;
-  padding-top: -2ex;
-}
-
-
-.elink {
-  float: right;
-  border-style: double;
-  border-radius: 2ex;
-  padding-bottom: 2ex;
-  padding-top: -2ex;
+/* Home css */
+h1 {
+  color: white;
 }
 body{
     background-color:white;
@@ -35,10 +23,6 @@ a:hover {
     color: black;
 }
 
-/* Home css */
-
-
-
 .about {
     background-color: #dcdcdc;
     border: 1px solid black;
@@ -50,9 +34,6 @@ a:hover {
     border-radius: 15px;
 }
 
-
-
-
 /* NavBar css */
 
 #NavLogo{
@@ -61,90 +42,13 @@ a:hover {
   width: auto;
 }
 
-Link {
-  float: center;
-  text-align:center;
-} 
-
 /* charity page css*/
-
-
-#signup {
-  float: center;
-  height: auto;
-  width: auto;
-  text-align:center;
-  color: black;
-}
-
-input {
-    float: center;
-    width: auto;
-    height: auto;
-    border-radius: 1em;
-}
-
-select {
-  float: center;
-  width: auto;
-  height: auto;
-}
-
-#signupbutton{
-  margin-top: 1em;
-  display: inline-block;
-  padding: 15px 25px;
-  font-size: 20px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: rgb(76, 89, 175);
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
-}
-
-#signupbutton:hover {
-  background-color: darkblue;
-}
-
-#signupbutton:active {
-  background-color: #3e7d8e;
-  box-shadow: 0 5px rgb(66, 64, 64);
-  transform: translateY(4px);
-}
 
 /* Charity Profile css */
 
-#update {
-    float: left;
-    height: auto;
-    width: auto;
-    text-align:center;
-    color: white;
-}
-
-#delete {
-    float: right;
-    height: auto;
-    width: auto;
-    text-align:center;
-    color: white;
-}
-
 /* Charity Login css */
 
-#login {
-    float: center;
-    height: auto;
-    width: auto;
-    text-align:center;
-    color:black;
-}
-
-/* CharityView  */
+/* CharityEvents  */
 
 table {
   font-family: arial, sans-serif;

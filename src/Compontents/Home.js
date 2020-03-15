@@ -1,23 +1,34 @@
 import React from "react";
-import NavBar from "./NavBar";
 
 const Home = () => (
-  <div className="home">
-    <NavBar />
-    <div className="clink">
-      <h3>I'm a Charity</h3>
-      <a href="http://localhost:8080/CharitySignup" target="_self">
-        SignUp
-      </a>
-      <a href="http://localhost:8080/CharityLogin" target="_self">
-        Login
-      </a>
+  <div>
+<nav className="navbar navbar-inverse">
+<div className="container-fluid">
+    <div className="navbar-header">
+        <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+        </button>
+        <img id="NavLogo"
+            src="https://raw.githubusercontent.com/bethel-school-of-technology/community-builders-frontend/roxine1/builders.png" />
+        <h1>Community Builders</h1>
     </div>
-    <div className="elink">
-        <h3>EventsPage</h3>
-        <a href="http://localhost:8080/CharityView" target="_self">Search</a>
+    <div className="collapse navbar-collapse" id="myNavbar">
+        <ul className="nav navbar-nav">
+            <li><a href="http://localhost:8080">Home</a></li>
+            <li><a href="http://localhost:8080/CharityEvent">Events</a>
+            </li>
+        </ul>
+        <ul className="nav navbar-nav navbar-right">   
+            <li><h1>Charities</h1></li>     
+            <li><a href="http://localhost:8080/CharitySignup" target="_self">
+                <span className="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="http://localhost:8080/CharityLogin"><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
     </div>
-    <h1 className="head">Community Builders</h1>
+</div>
+</nav>
     <div className="about">
       Welcome to Community Builders! Join us as we partner with outreach
       programs around the world to deliver helping hands where they are needed

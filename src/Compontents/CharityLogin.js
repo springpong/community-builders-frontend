@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ApiService from "../service/ApiService";
-import NavBar from "./NavBar";
+import Home from "./Home";
 
 class CharityLogin extends Component {
   constructor(props) {
@@ -47,7 +47,7 @@ class CharityLogin extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <Home />
         <h2 className="text-center">Charity Login</h2>
         <form>
         <div className="form-group">
@@ -55,7 +55,6 @@ class CharityLogin extends Component {
             <input
               type="text"
               name="username"
-              className="form-control"
               value={this.state.value}
               onChange={this.onChange}
             />
@@ -66,7 +65,6 @@ class CharityLogin extends Component {
             <input
               type="password"
               name="password"
-              className="form-control"
               value={this.state.value}
               onChange={this.onChange}
             />
