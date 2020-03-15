@@ -18,7 +18,7 @@ class CharityView extends Component {
   componentDidMount() {
     this.reloadUserList();
   }
-
+ 
   reloadUserList() {
     ApiService.fetchUsers()
       .then (response => {

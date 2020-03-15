@@ -14,7 +14,7 @@ class CharityProfile extends Component {
 onChange = e => {
   this.setState({ [e.target.name]: e.target.value });
 };
-
+ 
 onSubmit(event) {
   const data = { username: 'example' };
   fetch('https:localhost:8080/api/Volunteer', {

@@ -5,7 +5,7 @@ import CharitySignup from './Compontents/CharitySignup';
 import CharityLogin from './Compontents/CharityLogin';
 import CharityProfile from './Compontents/CharityProfile';
 import CharityEvent from './Compontents/CharityEvent';
-import EventsSignup from './Compontents/EventsSignup';
+import EventsSignup from './Compontents/EventSignup';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 
@@ -21,5 +21,5 @@ const App = () => (
     </div>
   </Router>
 );
-
+ 
 ReactDOM.render(<App />, document.getElementById('root'));

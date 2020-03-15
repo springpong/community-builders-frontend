@@ -16,7 +16,7 @@ class CharitySignup extends Component{
         }
         this.saveUser = this.saveUser.bind(this);
     }
-
+ 
     saveUser = (e) => {
         e.preventDefault();
         let user = {charityName: this.state.charityName, charityCity: this.state.charityCity, charityStreet: this.state.charityStreet, charityState: this.state.charityState, charityZip: this.state.charityZip, charityPhone: this.state.charityPhone, charityEvent: this.state.charityEvent};

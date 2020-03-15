@@ -8,7 +8,7 @@ class CharityEvent extends Component {
     this.state = {
       events: [],
       message: null
-    };
+    }; 
     this.deleteUser = this.deleteUser.bind(this);
     this.editUser = this.editUser.bind(this);
     this.addUser = this.addUser.bind(this);

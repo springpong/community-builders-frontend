@@ -17,7 +17,7 @@ class CharitySignup extends Component {
       charityPhone: ""
     };
     this.saveUser = this.saveUser.bind(this);
-  }
+  } 
 
   saveUser = e => {
     e.preventDefault();

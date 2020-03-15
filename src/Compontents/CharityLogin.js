@@ -12,7 +12,7 @@ class CharityLogin extends Component {
     };
     this.saveUser = this.saveUser.bind(this);
         this.loadUser = this.loadUser.bind(this);
-    }
+    } 
 
     componentDidMount() {
         this.loadUser();

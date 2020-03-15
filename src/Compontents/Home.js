@@ -19,7 +19,7 @@ const Home = () => (
             <li><a href="http://localhost:8080">Home</a></li>
             <li><a href="http://localhost:8080/CharityEvent">Events</a>
             </li>
-        </ul>
+        </ul> 
         <ul className="nav navbar-nav navbar-right">   
             <li><h1>Charities</h1></li>     
             <li><a href="http://localhost:8080/CharitySignup" target="_self">
