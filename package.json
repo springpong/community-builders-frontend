@@ -24,6 +24,7 @@
     "prop-types": "^15.7.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-native-loading-spinner-overlay": "^1.1.0",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "redux": "^3.7.0",

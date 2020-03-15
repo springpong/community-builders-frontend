@@ -1,25 +1,6 @@
-.clink {
-  float: left;
-  border-style: double;
-  border-radius: 2ex;
-  padding-bottom: 2ex;
-  padding-top: -2ex;
-}
-
-.vlink {
-  float: right;
-  border-style: double;
-  border-radius: 2ex;
-  padding-bottom: 2ex;
-  padding-top: -2ex;
-}
-
-.elink {
-  float: center;
-  border-style: double;
-  border-radius: 2ex;
-  padding-bottom: 2ex;
-  padding-top: -2ex;
+/* Home css */
+h1 {
+  color: white;
 }
 body{
     background-color:white;
@@ -27,7 +8,7 @@ body{
 }
 
 a {
-    color: black;
+    color: rgb(133, 64, 64);
     border: none;
     margin: 10px;
     cursor: pointer;
@@ -35,17 +16,12 @@ a {
     font-weight: bold;
     border-radius: 12px;
     padding: 10 50px;
-    background-color: #3e7d8e;
 }
 
 a:hover {
     background-color: darkred;
     color: black;
 }
-
-/* Home css */
-
-
 
 .about {
     background-color: #dcdcdc;
@@ -58,9 +34,6 @@ a:hover {
     border-radius: 15px;
 }
 
-
-
-
 /* NavBar css */
 
 #NavLogo{
@@ -69,92 +42,13 @@ a:hover {
   width: auto;
 }
 
-Link {
-  float: center;
-  text-align:center;
-} 
-
 /* charity page css*/
-label {
-    float: center;
-}
-
-#signup {
-  float: center;
-  height: auto;
-  width: auto;
-  text-align:center;
-  color: black;
-}
-
-input {
-    float: center;
-    width: auto;
-    height: auto;
-    border-radius: 1em;
-}
-
-select {
-  float: center;
-  width: auto;
-  height: auto;
-}
-
-#signupbutton{
-  margin-top: 1em;
-  display: inline-block;
-  padding: 15px 25px;
-  font-size: 20px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: rgb(76, 89, 175);
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
-}
-
-#signupbutton:hover {
-  background-color: darkblue;
-}
-
-#signupbutton:active {
-  background-color: #3e7d8e;
-  box-shadow: 0 5px rgb(66, 64, 64);
-  transform: translateY(4px);
-}
 
 /* Charity Profile css */
 
-#update {
-    float: left;
-    height: auto;
-    width: auto;
-    text-align:center;
-    color: white;
-}
-
-#delete {
-    float: right;
-    height: auto;
-    width: auto;
-    text-align:center;
-    color: white;
-}
-
 /* Charity Login css */
 
-#login {
-    float: center;
-    height: auto;
-    width: auto;
-    text-align:center;
-    color:black;
-}
-
-/*  ?  */
+/* CharityEvents  */
 
 table {
   font-family: arial, sans-serif;

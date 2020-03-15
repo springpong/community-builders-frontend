@@ -1,34 +1,60 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
+import ApiService from "../service/ApiService";
+import Home from "./Home";
 
-class Update extends Component {
+class CharityProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {apiResponse: ''    };
-  }
+  
+  this.onChange = this.onChange.bind(this);
+  this.onSubmit = this.onSubmit.bind(this);
+}
 
-  callAPI() {
-    fetch("http://localhost:8081/api/charity/user")
-      .then(response => response.json())
-      .then(data => this.setState({ apiResponse: res }))
-      .catch(err => err);
-  }
-
-  componentDidMount (){
-      this.callAPI();
-  }
-
+onChange = e => {
+  this.setState({ [e.target.name]: e.target.value });
+};
+ 
+onSubmit(event) {
+  const data = { username: 'example' };
+  fetch('https:localhost:8080/api/Volunteer', {
+  method: 'POST', // or 'PUT'
+  headers: {
+  'Content-Type': 'application/json',
+},
+  body: JSON.stringify(data),
+})
+  .then((response) => response.json())
+  .then((data) => {
+    console.log('Success:', data);
+})
+  .catch((error) => {
+  console.error('Error:', error);
+})};
   render() {
     return (
-      <form id="update" onSubmit={this.onSubmit}>
-        <h2>Charity update</h2>
-        <label>Charity Type:</label>
+      <div>
+        <Home />
+      <form id="signup" onSubmit={this.onSubmit}>
+        <h2>Charity Page</h2>
+        <label>UserName:</label>
+        <br />
         <input
           type="text"
-          name="charityType"
-          value={this.state.charityType}
+          name="userName"
+          value={this.state.userName}
           onChange={this.onChange}/>
         <br />
-        <label>Charity Name:</label>
+        <label>Password:</label>
+        <br />
+        <input
+          type="password"
+          name="passWord"
+          value={this.state.passWord}
+          onChange={this.onChange}/>
+        <br />
+        <label>Volunteer Name:</label>
+        <br />
         <input
           type="text"
           name="charityName"
@@ -36,6 +62,7 @@ class Update extends Component {
           onChange={this.onChange}/>
         <br />
         <label>Email:</label>
+        <br />
         <input
           type="email"
           name="email"
@@ -43,6 +70,7 @@ class Update extends Component {
           onChange={this.onChange}/>
         <br />
         <label>Address:</label>
+        <br />
         <input
           type="text"
           name="address"
@@ -50,6 +78,7 @@ class Update extends Component {
           onChange={this.onChange}/>
         <br />
         <label>City:</label>
+        <br />
         <input
           type="text"
           name="city"
@@ -57,6 +86,7 @@ class Update extends Component {
           onChange={this.onChange}/>
         <br />
         <label>State:</label>
+        <br />
         <input
           type="text"
           name="state"
@@ -65,6 +95,7 @@ class Update extends Component {
         />
         <br />
         <label>Zip Code:</label>
+        <br />
         <input
           type="numbers"
           name="zipcode"
@@ -72,153 +103,17 @@ class Update extends Component {
           onChange={this.onChange}/>
         <br />
         <label>Phone Number:</label>
+        <br />
         <input
           type="tel"
           name="phoneNumber"
           value={this.state.phoneNumber}
           onChange={this.onChange}/>
         <br />
-        <label>UserName:</label>
-        <input
-          type="text"
-          name="userName"
-          value={this.state.userName}
-          onChange={this.onChange}/>
-        <br />
-        <label>Password:</label>
-        <input
-          type="password"
-          name="passWord"
-          value={this.state.passWord}
-          onChange={this.onChange}/>
-        <br />
-        <label>Event:</label>
-        <input
-          type="password"
-          name="event"
-          value={this.state.event}
-          onChange={this.onChange}/>
-        <br />
-        <button type="submit">Update</button>
-      </form>
+        </form>
+      </div>
     );
   }
 }
 
-class Delete extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {apiResponse: ''    };
-  }
-
-  callAPI() {
-    fetch("http://localhost:8080/api/charity/user")
-      .then(response => response.json())
-      .then(data => this.setState({ apiResponse: res }))
-      .catch(err => err);
-  }
-
-  componentDidMount (){
-      this.callAPI();
-  }
-
-
-  render() {
-    const { hits } = this.state;
-    return (
-      <form id="delete" onSubmit={this.onSubmit}>
-        <h2>Charity Delete</h2>
-        <label>Charity Type:</label>
-        <input
-          type="text"
-          name="charityType"
-          value={this.state.charityType}
-          onChange={this.onChange}/>
-        <br />
-        <label>Charity Name:</label>
-        <input
-          type="text"
-          name="charityName"
-          value={this.state.charityName}
-          onChange={this.onChange}/>
-        <br />
-        <label>Email:</label>
-        <input
-          type="email"
-          name="email"
-          value={this.state.email}
-          onChange={this.onChange}/>
-        <br />
-        <label>Address:</label>
-        <input
-          type="text"
-          name="address"
-          value={this.state.address}
-          onChange={this.onChange}/>
-        <br />
-        <label>City:</label>
-        <input
-          type="text"
-          name="city"
-          value={this.state.city}
-          onChange={this.onChange}/>
-        <br />
-        <label>State:</label>
-        <input
-          type="text"
-          name="state"
-          value={this.state.state}
-          onChange={this.onChange}
-        />
-        <br />
-        <label>Zip Code:</label>
-        <input
-          type="numbers"
-          name="zipcode"
-          value={this.state.zipcode}
-          onChange={this.onChange}/>
-        <br />
-        <label>Phone Number:</label>
-        <input
-          type="tel"
-          name="phoneNumber"
-          value={this.state.phoneNumber}
-          onChange={this.onChange}/>
-        <br />
-        <label>UserName:</label>
-        <input
-          type="text"
-          name="userName"
-          value={this.state.userName}
-          onChange={this.onChange}/>
-        <br />
-        <label>Password:</label>
-        <input
-          type="password"
-          name="passWord"
-          value={this.state.passWord}
-          onChange={this.onChange}/>
-        <br />
-        <label>Event:</label>
-        <input
-          type="password"
-          name="event"
-          value={this.state.event}
-          onChange={this.onChange}/>
-        <br />
-        <button type="submit">Delete</button>
-      </form>
-    );
-  }
-}
-class CharityProfile extends React.Component {
-    render() {
-      return (
-        <div>
-          <Update />
-          <Delete />
-        </div>
-      );
-    }
-  }
 export default CharityProfile;

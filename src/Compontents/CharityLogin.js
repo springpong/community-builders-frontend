@@ -1,73 +1,81 @@
 import React, { Component } from "react";
-import NavBar from "./NavBar";
+import ApiService from "../service/ApiService";
+import Home from "./Home";
 
-class CharityLogin extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        userName: "",
-        passWord: ""
-      };
-  
-      this.onChange = this.onChange.bind(this);
-      this.onSubmit = this.onSubmit.bind(this);
-    }
-  
-    onChange = e => {
-      this.setState({ [e.target.name]: e.target.value });
+class CharityLogin extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: "",
+      username: "",
+      password: "",
     };
+    this.saveUser = this.saveUser.bind(this);
+        this.loadUser = this.loadUser.bind(this);
+    } 
+
+    componentDidMount() {
+        this.loadUser();
+    }
+
+    loadUser() {
+        ApiService.fetchUsername()
+    .then( res => {
+        let username = res.data;
+        this.setState({
+          id: username.id,
+          username: username.username,
+          password: username.password,
+        });
+        console.log(this.state); 
+      })
+        
+      }
   
-    onSubmit(event) {
-      fetch("http://localhost:8081/api/charity/user")
-          .then( response => response.json())
-          .then(
-              // handle the result
-              (result) => {
-                  this.setState({
-                      isLoaded : true,
-                      posts : result
-                  });
-              },
-  
-              // Handle error 
-              (error) => {
-                  this.setState({
-                      isLoaded: true,
-                      error
-                  })
-              },
-          )
-      };
-  
-    render() {
-      return (
-        <div>
-          <NavBar />
-        <form id="login" onSubmit={this.onSubmit}>
-          <h2>Charity Login</h2>
-          <label>UserName:</label>
-          <br />
-          <input
-            type="text"
-            name="userName"
-            value={this.state.userName}
-            onChange={this.onChange}
-          />
-          <br />
-          <label>Password:</label>
-          <br />
-          <input
-            type="password"
-            name="passWord"
-            value={this.state.passWord}
-            onChange={this.onChange}
-          />
-          <br />
-          <a href="http://localhost:8080/CharityProfile" target="_self">Signin</a>
+      onChange = (e) =>
+      this.setState({ [e.target.name]: e.target.value });
+
+  saveUser = (e) => {
+      e.preventDefault();
+      let user = {id: this.state.id, password: this.state.password, firstName: this.state.firstName, lastName: this.state.lastName, age: this.state.age, salary: this.state.salary};
+      ApiService.editUser(user)
+          .then(res => {
+              this.setState({message : 'User added successfully.'});
+              this.props.history.push('/CharityProfile');
+          });
+  }
+  render() {
+    return (
+      <div>
+        <Home />
+        <h2 className="text-center">Charity Login</h2>
+        <form>
+        <div className="form-group">
+            <label>User Name:</label>
+            <input
+              type="text"
+              name="username"
+              value={this.state.value}
+              onChange={this.onChange}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Password:</label>
+            <input
+              type="password"
+              name="password"
+              value={this.state.value}
+              onChange={this.onChange}
+            />
+          </div>
+          <button className="btn btn-success" onClick={this.saveUser}>
+            Save
+          </button>
         </form>
       </div>
-      );
-    }
+    );
   }
-  
-  export default CharityLogin;
+}
+
+export default CharityLogin;

@@ -1,65 +1,62 @@
 import React, { Component } from "react";
+import EventService from "../service/EventService";
+import Home from "./Home";
 
-class CharityEvent extends React.Component {
+class CharityEvent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      charityName: "",
-      eventName: "",
-      eventAddress: "",
-      eventCity: "",
-      eventState: "",
-      eventZipcode: "",
-      eventDate: "",
-      eventTime: "",
-      eventDescription: ""
-    };
-
-    this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
+      events: [],
+      message: null
+    }; 
+    this.reloadEventsList = this.reloadEventsList.bind(this);
   }
 
-  onChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
+  componentDidMount() {
+    this.reloadEventsList();
+  }
 
-  componentDidMount () {
-    fetch ("https://localhost8080/api/charity/events")
-      .then(res => res.json())
-      .then(data => this.setState({posts: data}));
+  reloadEventsList() {
+    EventService.fetchEvents().then(response => {
+      console.log(response.data);
+      this.setState({ events: response.data });
+    });
   }
 
   render() {
     return (
-      <table>
-        <tr>
-          <th>Charity Name</th>
-          <th>Event Name</th>
-          <th>Event Address</th>
-          <th>Event City</th>
-          <th>Event State</th>
-          <th>Event Zipcode</th>
-          <th>Event Date</th>
-          <th>Event Time</th>
-          <th>Event Description</th>
-        </tr>
-        {this.state.posts.map((item,index) => (
-          <div key={index}>
-        <tr>
-          <td>item.charityName </td>
-          <td>item.eventName </td>
-          <td>item.eventAddress</td>
-          <td>item.eventCity </td>
-          <td>item.eventState</td>
-          <td>item.Zipcode</td>
-          <td>item.Date </td>
-          <td>item.eventTime</td>
-          <td>item.eventDescription</td>
-        </tr>
-        </div>
-        ))}
-      </table>
+      <div>
+        <Home />
+        <h2 className="text-center">CharityEvents </h2>
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th>Charity Name</th>
+              <th>Charity Phone</th>
+              <th>Event Name</th>
+              <th>Event Location</th>
+              <th>Event Date</th>
+              <th>Event Time</th>
+              <th>Event Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.events.map(events => (
+              <tr key={events.id}>
+                <td>{events.charityName}</td>
+                <td>{events.charityPhone}</td>
+                <td>{events.eventName}</td>
+                <td>{events.eventLocation}</td>
+                <td>{events.eventDate}</td>
+                <td>{events.eventTime}</td>
+                <td>{events.eventDescription}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     );
   }
 }
+
 export default CharityEvent;
