@@ -54,24 +54,24 @@ class CharityEvent extends Component {
           <thead>
             <tr>
               <th>Charity Name</th>
-              <th>Charity Street</th>
-              <th>Charity City</th>
-              <th>Charity state</th>
-              <th>Charity Zip code</th>
               <th>Charity Phone</th>
-              <th>Charity Events</th>
+              <th>Event Name</th>
+              <th>Event Location</th>
+              <th>Event Date</th>
+              <th>Event Time</th>
+              <th>Event Description</th>
             </tr>
           </thead>
           <tbody>
-            {this.state.events.map(user => (
+            {this.state.events.map(event => (
               <tr key={user.id}>
-                <td>{user.charityName}</td>
-                <td>{user.charityStreet}</td>
-                <td>{user.charityCity}</td>
-                <td>{user.charityState}</td>
-                <td>{user.charityZip}</td>
-                <td>{user.charityPhone}</td>
-                <td>{user.charityEvents}</td>
+                <td>{event.charityName}</td>
+                <td>{event.charityPhone}</td>
+                <td>{event.eventName}</td>
+                <td>{event.eventLocation}</td>
+                <td>{event.eventDate}</td>
+                <td>{event.eventTime}</td>
+                <td>{event.eventDescription}</td>
               </tr>
             ))}
           </tbody>

@@ -1,26 +1,26 @@
 import React, { Component } from 'react'
-import ApiService from "../service/ApiService";
+import EventService from "../service/EventService";
 import Home from "./Home";
 
-class CharitySignup extends Component{
+class EventSignup extends Component{
     constructor(props){
         super(props);
         this.state ={
             charityName: '',
-            charityStreet: '',
-            charityCity: '',
-            charityState: '',
-            charityZip: '',
             charityPhone: '',
-            charityEvent: '',
+            eventName: '',
+            eventLocation: '',
+            eventDate: '',
+            eventTime: '',
+            eventDescription: '',
         }
         this.saveUser = this.saveUser.bind(this);
     }
  
     saveUser = (e) => {
         e.preventDefault();
-        let user = {charityName: this.state.charityName, charityCity: this.state.charityCity, charityStreet: this.state.charityStreet, charityState: this.state.charityState, charityZip: this.state.charityZip, charityPhone: this.state.charityPhone, charityEvent: this.state.charityEvent};
-        ApiService.addUser(user)
+        let user = {charityName: this.state.charityName, charityPhone: this.state.charityPhone, eventName: this.state.eventName, eventLocation: this.state.eventLocation, eventDate: this.state.eventDate, eventTime: this.state.eventTime, eventDescription: this.state.eventDescription};
+        EventService.addUser(user)
             .then(res => {
                 this.setState({message : 'User added successfully.'});
                 this.props.history.push('/CharityLogin');
@@ -35,36 +35,41 @@ class CharitySignup extends Component{
         return(
             <div>
                 <Home />
-                <h2 className="text-center">Charity Signup</h2>
+                <h2 className="text-center">Events Signup</h2>
                 <form>
                 <div className="form-group">
                     <label>Charity Name:</label>
-                    <input type="text" name="charityName" className="form-control" value={this.state.charityName} onChange={this.onChange}/>
-                </div>
-
-               <div className="form-group">
-                    <label>Charity Street:</label>
-                    <input  type="text" name="charityStreet" className="form-control" value={this.state.charityStreet} onChange={this.onChange}/>
+                    <input type="text" name="charityName"  value={this.state.charityName} onChange={this.onChange}/>
                 </div>
                 
                 <div className="form-group">
-                    <label>Charity City:</label>
-                    <input type="text" name="charityCity" className="form-control" value={this.state.charityCity} onChange={this.onChange}/>
-                </div>
-
-                <div className="form-group">
-                    <label>Charity State:</label>
-                    <input type="text" name="charityState" className="form-control" value={this.state.charityState} onChange={this.onChange}/>
-                </div>
-
-                <div className="form-group">
-                    <label>Charity Zipcode:</label>
-                    <input type="text"  name="charityZip" className="form-control" value={this.state.charityZip} onChange={this.onChange}/>
-                </div>
-
-                <div className="form-group">
                     <label>Charity Phone:</label>
-                    <input type="text"  name="charityPhone" className="form-control" value={this.state.charityPhone} onChange={this.onChange}/>
+                    <input type="text" name="charityName"  value={this.state.charityPhone} onChange={this.onChange}/>
+                </div>
+
+               <div className="form-group">
+                    <label>Event Name:</label>
+                    <input  type="text" name="eventName"  value={this.state.eventName} onChange={this.onChange}/>
+                </div>
+                
+                <div className="form-group">
+                    <label>Event Location:</label>
+                    <input type="text" name="eventLocation"  value={this.state.eventLocation} onChange={this.onChange}/>
+                </div>
+
+                <div className="form-group">
+                    <label>Event Date:</label>
+                    <input type="text" name="eventDate"  value={this.state.eventDate} onChange={this.onChange}/>
+                </div>
+
+                <div className="form-group">
+                    <label>Event Time:</label>
+                    <input type="text"  name="eventTime"  value={this.state.eventTime} onChange={this.onChange}/>
+                </div>
+
+                <div className="form-group">
+                    <label>Event Description:</label>
+                    <input type="text"  name="eventDescription"  value={this.state.eventDescription} onChange={this.onChange}/>
                 </div>
 
                 <button className="btn btn-success" onClick={this.saveUser}>Update</button>
@@ -74,4 +79,4 @@ class CharitySignup extends Component{
     }
 }
 
-export default CharitySignup;
+export default EventSignup;

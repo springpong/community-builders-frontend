@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const USER_API_BASE_URL = 'http://localhost:8081/api/events/user';
+const USER_API_BASE_URL = 'http://localhost:8081/api/charity/events';
 
 class ApiService {
 
@@ -16,8 +16,8 @@ class ApiService {
         return axios.delete(USER_API_BASE_URL + '/' + userId);
     }
 
-    addUser(user) {
-        return axios.post(""+USER_API_BASE_URL, user);
+    addUser(events) {
+        return axios.post(""+USER_API_BASE_URL, events);
     }
 
     editUser(user) {

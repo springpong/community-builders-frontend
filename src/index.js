@@ -5,7 +5,7 @@ import CharitySignup from './Compontents/CharitySignup';
 import CharityLogin from './Compontents/CharityLogin';
 import CharityProfile from './Compontents/CharityProfile';
 import CharityEvent from './Compontents/CharityEvent';
-import EventsSignup from './Compontents/EventSignup';
+import EventSignup from './Compontents/EventSignup';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 
@@ -17,7 +17,7 @@ const App = () => (
       <Route exact path="/CharityLogin" component={CharityLogin} />
       <Route exact path="/CharityProfile" component={CharityProfile} />
       <Route exact path="/CharityEvent" component={CharityEvent} />
-      <Route exact path="/EventSignup" component={CharitySignup} />
+      <Route exact path="/EventSignup" component={EventSignup} />
     </div>
   </Router>
 );
