@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import ApiService from "../service/ApiService";
 import Home from "./Home";
+import CharityNavBar from "../Layout/CharityNavBar"
+
 
 class CharityProfile extends Component {
   constructor(props) {
@@ -34,7 +36,7 @@ onSubmit(event) {
   render() {
     return (
       <div>
-        <Home />
+        <CharityNavBar />
       <form id="signup" onSubmit={this.onSubmit}>
         <h2>Charity Page</h2>
         <label>UserName:</label>

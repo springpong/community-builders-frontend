@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ApiService from "../service/ApiService";
-import NavBar from "./NavBar";
+import CharityNavBar from "../Layout/CharityNavBar";
 
 class CharityView extends Component {
   constructor(props) {
@@ -49,7 +49,7 @@ addUser() {
   render() {
     return (
       <div>
-        <NavBar />
+        <CharityNavBar />
         <h2 className="text-center">User Details</h2>
         <button className="btn btn-danger" onClick={() => this.addUser()}>
           {" "}

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import EventService from "../service/EventService";
-import Home from "./Home";
+import CharityNavBar from "../Layout/CharityNavBar";
 
 class CharityEvent extends Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class CharityEvent extends Component {
   render() {
     return (
       <div>
-        <Home />
+        <CharityNavBar />
         <h2 className="text-center">CharityEvents </h2>
         <table className="table table-striped">
           <thead>

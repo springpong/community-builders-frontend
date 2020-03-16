@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ApiService from "../service/ApiService";
-import Home from "./Home";
+import NavBar from "../Layout/NavBar";
+
 class CharitySignup extends Component {
   constructor(props) {
     super(props);
@@ -46,7 +47,7 @@ class CharitySignup extends Component {
   render() {
     return (
       <div>
-        <Home />
+        <NavBar />
         <h2 className="text-center">Charity Signup</h2>
         <form>
           <div className="form-group">
