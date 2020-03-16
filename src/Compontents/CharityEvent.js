@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ApiService from "../service/ApiService";
+import EventService from "../service/EventService";
 import Home from "./Home";
 
 class CharityEvent extends Component {
@@ -9,40 +9,18 @@ class CharityEvent extends Component {
       events: [],
       message: null
     }; 
-    this.deleteUser = this.deleteUser.bind(this);
-    this.editUser = this.editUser.bind(this);
-    this.addUser = this.addUser.bind(this);
-    this.reloadUserList = this.reloadUserList.bind(this);
+    this.reloadEventsList = this.reloadEventsList.bind(this);
   }
 
   componentDidMount() {
-    this.reloadUserList();
+    this.reloadEventsList();
   }
 
-  reloadUserList() {
-    ApiService.fetchUsers().then(response => {
+  reloadEventsList() {
+    EventService.fetchEvents().then(response => {
       console.log(response.data);
       this.setState({ events: response.data });
     });
-  }
-
-  deleteUser(userId) {
-    ApiService.deleteUser(userId).then(res => {
-      this.setState({ message: "User deleted successfully." });
-      this.setState({
-        users: this.state.users.filter(user => user.id !== userId)
-      });
-    });
-  }
-
-  editUser(id) {
-    window.localStorage.setItem("userId", id);
-    this.props.history.push("/edit-user");
-  }
-
-  addUser() {
-    window.localStorage.removeItem("userId");
-    this.props.history.push("/CharitySignup");
   }
 
   render() {
@@ -63,15 +41,15 @@ class CharityEvent extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.events.map(event => (
-              <tr key={user.id}>
-                <td>{event.charityName}</td>
-                <td>{event.charityPhone}</td>
-                <td>{event.eventName}</td>
-                <td>{event.eventLocation}</td>
-                <td>{event.eventDate}</td>
-                <td>{event.eventTime}</td>
-                <td>{event.eventDescription}</td>
+            {this.state.events.map(events => (
+              <tr key={events.id}>
+                <td>{events.charityName}</td>
+                <td>{events.charityPhone}</td>
+                <td>{events.eventName}</td>
+                <td>{events.eventLocation}</td>
+                <td>{events.eventDate}</td>
+                <td>{events.eventTime}</td>
+                <td>{events.eventDescription}</td>
               </tr>
             ))}
           </tbody>

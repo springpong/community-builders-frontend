@@ -9,7 +9,7 @@ class ApiService {
     }
 
     fetchUsername(username) {
-        return axios.get(USER_API_BASE_URL + '/' + username);
+        return axios.post(""+USER_API_BASE_URL + '/' + username);
     }
 
     deleteUser(userId) {

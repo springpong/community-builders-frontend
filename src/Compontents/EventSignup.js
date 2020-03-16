@@ -19,10 +19,9 @@ class EventSignup extends Component{
  
     saveUser = (e) => {
         e.preventDefault();
-        let user = {charityName: this.state.charityName, charityPhone: this.state.charityPhone, eventName: this.state.eventName, eventLocation: this.state.eventLocation, eventDate: this.state.eventDate, eventTime: this.state.eventTime, eventDescription: this.state.eventDescription};
-        EventService.addUser(user)
+        let events = {charityName: this.state.charityName, charityPhone: this.state.charityPhone, eventName: this.state.eventName, eventLocation: this.state.eventLocation, eventDate: this.state.eventDate, eventTime: this.state.eventTime, eventDescription: this.state.eventDescription};
+        EventService.addEvents(events)
             .then(res => {
-                this.setState({message : 'User added successfully.'});
                 this.props.history.push('/CharityLogin');
             })
             .catch(err => console.log(err));
@@ -41,10 +40,10 @@ class EventSignup extends Component{
                     <label>Charity Name:</label>
                     <input type="text" name="charityName"  value={this.state.charityName} onChange={this.onChange}/>
                 </div>
-                
+
                 <div className="form-group">
                     <label>Charity Phone:</label>
-                    <input type="text" name="charityName"  value={this.state.charityPhone} onChange={this.onChange}/>
+                    <input type="text" name="charityPhone"  value={this.state.charityPhone} onChange={this.onChange}/>
                 </div>
 
                <div className="form-group">

@@ -1,61 +1,61 @@
 import React, { Component } from "react";
 import ApiService from "../service/ApiService";
 import Home from "./Home";
+import Axios from "axios";
 
 class CharityLogin extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: "",
-      username: "",
+      userId: "",
       password: "",
+      loginErrors: ""
     };
-    this.saveUser = this.saveUser.bind(this);
-        this.loadUser = this.loadUser.bind(this);
-    } 
 
-    componentDidMount() {
-        this.loadUser();
-    }
-
-    loadUser() {
-        ApiService.fetchUsername()
-    .then( res => {
-        let username = res.data;
-        this.setState({
-          id: username.id,
-          username: username.username,
-          password: username.password,
-        });
-        console.log(this.state); 
-      })
-        
-      }
-  
-      onChange = (e) =>
-      this.setState({ [e.target.name]: e.target.value });
-
-  saveUser = (e) => {
-      e.preventDefault();
-      let user = {id: this.state.id, password: this.state.password, firstName: this.state.firstName, lastName: this.state.lastName, age: this.state.age, salary: this.state.salary};
-      ApiService.editUser(user)
-          .then(res => {
-              this.setState({message : 'User added successfully.'});
-              this.props.history.push('/CharityProfile');
-          });
+    this.onSubmit = this.onSubmit.bind(this);
+    this.onChange = this.onChange.bind(this);
   }
+
+  onChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value});
+  }
+
+  onSubmit(event) {
+    const { userId, password} = this.state;
+    Axios.post("http://localhost:8081/api/charity/user/",{
+      userId,
+      password
+    },
+    console.log('sent response')
+    )
+    .then( res => {
+      let user = res.data;
+      this.setState({
+        userId: user.userId,
+        password: user.password,
+      });
+      console.log(this.state); 
+      this.props.history.push('/CharityProfile');
+    })
+      .catch(error => {
+        console.log("login error", error);
+      });
+      event.preventDefault();
+  }
+
   render() {
     return (
       <div>
         <Home />
         <h2 className="text-center">Charity Login</h2>
-        <form>
-        <div className="form-group">
+        <form onSubmit={this.onSubmit}>
+          <div className="form-group">
             <label>User Name:</label>
             <input
               type="text"
-              name="username"
-              value={this.state.value}
+              name="userId"
+              value={this.state.userId}
               onChange={this.onChange}
             />
           </div>
@@ -65,11 +65,11 @@ class CharityLogin extends Component {
             <input
               type="password"
               name="password"
-              value={this.state.value}
+              value={this.state.password}
               onChange={this.onChange}
             />
           </div>
-          <button className="btn btn-success" onClick={this.saveUser}>
+          <button className="btn btn-success" onClick={this.loadUser}>
             Save
           </button>
         </form>

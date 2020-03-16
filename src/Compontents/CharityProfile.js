@@ -5,111 +5,151 @@ import Home from "./Home";
 class CharityProfile extends Component {
   constructor(props) {
     super(props);
-    this.state = {apiResponse: ''    };
-  
-  this.onChange = this.onChange.bind(this);
-  this.onSubmit = this.onSubmit.bind(this);
-}
+    this.state = this.state = {
+      username: "",
+      password: "",
+      charityTitle: "",
+      charityName: "",
+      charityCat: "",
+      charityStreet: "",
+      charityCity: "",
+      charityState: "",
+      charityZip: "",
+      charityPhone: ""
+    };
+    this.saveUser = this.saveUser.bind(this);
+  } 
 
-onChange = e => {
-  this.setState({ [e.target.name]: e.target.value });
-};
- 
-onSubmit(event) {
-  const data = { username: 'example' };
-  fetch('https:localhost:8080/api/Volunteer', {
-  method: 'POST', // or 'PUT'
-  headers: {
-  'Content-Type': 'application/json',
-},
-  body: JSON.stringify(data),
-})
-  .then((response) => response.json())
-  .then((data) => {
-    console.log('Success:', data);
-})
-  .catch((error) => {
-  console.error('Error:', error);
-})};
+  saveUser = e => {
+    e.preventDefault();
+    let user = {
+      username: this.state.username,
+      password: this.state.password,
+      charityTitle: this.state.charityTitle,
+      charityName: this.state.charityName,
+      charityCat: this.state.charityCat,
+      charityCity: this.state.charityCity,
+      charityStreet: this.state.charityStreet,
+      charityState: this.state.charityState,
+      charityZip: this.state.charityZip,
+      charityPhone: this.state.charityPhone
+    };
+    ApiService.editUser(user)
+      .then(res => {
+        this.setState({ message: "User added successfully." });
+        this.props.history.push("/CharityProfile");
+      })
+      .catch(err => console.log(err));
+  };
+
+  onChange = e => this.setState({ [e.target.name]: e.target.value });
   render() {
     return (
       <div>
         <Home />
-      <form id="signup" onSubmit={this.onSubmit}>
-        <h2>Charity Page</h2>
-        <label>UserName:</label>
-        <br />
-        <input
-          type="text"
-          name="userName"
-          value={this.state.userName}
-          onChange={this.onChange}/>
-        <br />
-        <label>Password:</label>
-        <br />
-        <input
-          type="password"
-          name="passWord"
-          value={this.state.passWord}
-          onChange={this.onChange}/>
-        <br />
-        <label>Volunteer Name:</label>
-        <br />
-        <input
-          type="text"
-          name="charityName"
-          value={this.state.charityName}
-          onChange={this.onChange}/>
-        <br />
-        <label>Email:</label>
-        <br />
-        <input
-          type="email"
-          name="email"
-          value={this.state.email}
-          onChange={this.onChange}/>
-        <br />
-        <label>Address:</label>
-        <br />
-        <input
-          type="text"
-          name="address"
-          value={this.state.address}
-          onChange={this.onChange}/>
-        <br />
-        <label>City:</label>
-        <br />
-        <input
-          type="text"
-          name="city"
-          value={this.state.city}
-          onChange={this.onChange}/>
-        <br />
-        <label>State:</label>
-        <br />
-        <input
-          type="text"
-          name="state"
-          value={this.state.state}
-          onChange={this.onChange}
-        />
-        <br />
-        <label>Zip Code:</label>
-        <br />
-        <input
-          type="numbers"
-          name="zipcode"
-          value={this.state.zipcode}
-          onChange={this.onChange}/>
-        <br />
-        <label>Phone Number:</label>
-        <br />
-        <input
-          type="tel"
-          name="phoneNumber"
-          value={this.state.phoneNumber}
-          onChange={this.onChange}/>
-        <br />
+        <h2 className="text-center">Charity Signup</h2>
+        <form>
+          <div className="form-group">
+            <label>User Name:</label>
+            <input
+              type="text"
+              name="username"
+              value={this.state.username}
+              onChange={this.onChange}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Password:</label>
+            <input
+              type="password"
+              name="password"
+              value={this.state.Password}
+              onChange={this.onChange}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Charity Title:</label>
+            <input
+              type="text"
+              name="charityTitle"
+              value={this.state.charityTitle}
+              onChange={this.onChange}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Charity Name:</label>
+            <input
+              type="text"
+              name="charityName"
+              value={this.state.charityName}
+              onChange={this.onChange}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Charity Cat:</label>
+            <input
+              type="text"
+              name="charityCat"
+              value={this.state.charityCat}
+              onChange={this.onChange}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Charity Street:</label>
+            <input
+              type="text"
+              name="charityStreet"
+              value={this.state.charityStreet}
+              onChange={this.onChange}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Charity City:</label>
+            <input
+              type="text"
+              name="charityCity"
+              value={this.state.charityCity}
+              onChange={this.onChange}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Charity State:</label>
+            <input
+              type="text"
+              name="charityState"
+              value={this.state.charityState}
+              onChange={this.onChange}
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Charity Zipcode:</label>
+            <input
+              type="text"
+              name="charityZip"
+              value={this.state.charityZip}
+              onChange={this.onChange}
+            />
+          </div>
+          <div className="form-group">
+            <label>Charity Phone:</label>
+            <input
+              type="text"
+              name="charityPhone"
+              value={this.state.charityPhone}
+              onChange={this.onChange}
+            />
+          </div>
+          <button className="btn btn-success" onClick={this.saveUser}>
+            Update
+          </button>
         </form>
       </div>
     );
