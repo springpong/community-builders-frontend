@@ -10,7 +10,7 @@ const Home = () => (
       most. Sign up as a charity or volunteer member to start building your
       community.
     </div>
-  </div>
+  </div> 
 );
 
 export default Home;

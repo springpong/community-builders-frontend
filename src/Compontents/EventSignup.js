@@ -7,7 +7,7 @@ class EventSignup extends Component{
         super(props);
         this.state ={
             charityName: '',
-            charityPhone: '',
+            charityPhone: '', 
             eventName: '',
             eventLocation: '',
             eventDate: '',

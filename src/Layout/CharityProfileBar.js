@@ -10,7 +10,7 @@ export default class CharityProfileBar extends Component {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
-            </button>
+            </button> 
             <img id="NavLogo"
                 src="https://raw.githubusercontent.com/bethel-school-of-technology/community-builders-frontend/roxine1/builders.png" />
             <h1>Community Builders</h1>

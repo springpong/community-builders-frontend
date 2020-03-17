@@ -52,7 +52,7 @@ class CharityLogin extends Component {
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label>User Name:</label>
-            <input
+            <input 
               type="text"
               name="userId"
               value={this.state.userId}

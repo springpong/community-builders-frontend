@@ -10,7 +10,7 @@ class ApiService {
 
     fetchUsername(username) {
         return axios.get(USER_API_BASE_URL + '/' + username);
-    }
+    } 
 
     deleteUser(eventsId) {
         return axios.delete(USER_API_BASE_URL + '/' + eventsId);

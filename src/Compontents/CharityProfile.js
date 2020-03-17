@@ -24,7 +24,7 @@ class CharityProfile extends Component {
 
   componentDidMount() {
       this.loadUser();
-  }
+  } 
 
   loadUser() {
       ApiService.fetchUser(("username"))

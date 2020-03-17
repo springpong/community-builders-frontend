@@ -8,7 +8,7 @@ class CharityEvent extends Component {
     this.state = {
       events: [],
       message: null
-    }; 
+    };  
     this.reloadEventsList = this.reloadEventsList.bind(this);
   }
 

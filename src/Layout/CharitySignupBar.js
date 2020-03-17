@@ -23,7 +23,7 @@ export default class NavBar extends Component {
     <div className="collapse navbar-collapse" id="myNavbar">
     <ul className="nav navbar-nav">
             <li><a href="http://localhost:8080">Home</a></li>
-        </ul>
+        </ul> 
         <ul className="nav navbar-nav navbar-right">   
             <li><h1>Charities</h1></li>     
             <li><a href="http://localhost:8080/CharitySignup" target="_self">

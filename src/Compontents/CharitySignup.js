@@ -5,7 +5,7 @@ class CharitySignup extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      username: "", 
       password: "",
       charityTitle: "",
       charityName: "",
