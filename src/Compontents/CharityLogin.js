@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ApiService from "../service/ApiService";
-import Home from "./Home";
+import CharitySignupBar from "../Layout/CharitySignupBar";
 import Axios from "axios";
 
 class CharityLogin extends Component {
@@ -47,7 +47,7 @@ class CharityLogin extends Component {
   render() {
     return (
       <div>
-        <Home />
+        <CharitySignupBar />
         <h2 className="text-center">Charity Login</h2>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">

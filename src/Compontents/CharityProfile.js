@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import ApiService from "../service/ApiService";
-import Home from "./Home";
+import CharityProfileBar from "../Layout/CharityProfileBar";
 
 class CharityProfile extends Component {
   constructor(props) {
     super(props);
     this.state = this.state = {
+      id: "",
       username: "",
       password: "",
       charityTitle: "",
@@ -18,11 +19,37 @@ class CharityProfile extends Component {
       charityPhone: ""
     };
     this.saveUser = this.saveUser.bind(this);
-  } 
+    this.loadUser = this.loadUser.bind(this);
+  }
+
+  componentDidMount() {
+      this.loadUser();
+  }
+
+  loadUser() {
+      ApiService.fetchUser(("username"))
+          .then((res) => {
+              let user = res.data.result;
+              this.setState({
+                id: user.id,
+                username: user.username,
+                password: user.password,
+                charityTitle: user.charityTitle,
+                charityName: user.charityName,
+                charityCat: user.charityCat,
+                charityStreet: user.charityStreet,
+                charityCity: user.charityCity,
+                charityState: user.charityState,
+                charityZip: user.charityZip,
+                charityPhone: user.charityPhone,
+                })
+                console.log(this.state)
+            });
+    }
 
   saveUser = e => {
     e.preventDefault();
-    let user = {
+    let username = {
       username: this.state.username,
       password: this.state.password,
       charityTitle: this.state.charityTitle,
@@ -34,7 +61,7 @@ class CharityProfile extends Component {
       charityZip: this.state.charityZip,
       charityPhone: this.state.charityPhone
     };
-    ApiService.editUser(user)
+    ApiService.editUser(username)
       .then(res => {
         this.setState({ message: "User added successfully." });
         this.props.history.push("/CharityProfile");
@@ -46,8 +73,8 @@ class CharityProfile extends Component {
   render() {
     return (
       <div>
-        <Home />
-        <h2 className="text-center">Charity Signup</h2>
+        <CharityProfileBar />
+        <h2 className="text-center">Charity Profile</h2>
         <form>
           <div className="form-group">
             <label>User Name:</label>
