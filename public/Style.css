@@ -19,8 +19,8 @@ a {
 }
 
 a:hover {
-    background-color: darkred;
-    color: black;
+  
+    color: white;
 }
 
 .about {
@@ -38,8 +38,16 @@ a:hover {
 
 #NavLogo{
   float: left;
-  height: 1em;
+  height: 3em;
   width: auto;
+}
+
+.navbar {
+  padding-top: .5em;
+}
+
+.h4 {
+  color: white;
 }
 
 /* charity page css*/
