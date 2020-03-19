@@ -6,8 +6,8 @@ export default class NavBar extends Component {
   render() {
   return(
       
-        <nav className="navbar navbar-inverse">
-<div className="container-fluid">
+<nav className="navbar navbar-inverse">
+    <div className="container-fluid">
     <div className="navbar-header">
         <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
             <span className="icon-bar"></span>
@@ -15,7 +15,7 @@ export default class NavBar extends Component {
             <span className="icon-bar"></span>
         </button>
         <img id="NavLogo"
-            src="https://raw.githubusercontent.com/bethel-school-of-technology/community-builders-frontend/roxine1/builders.png" />
+            src="/src/images/builders.png" />
         <h4 className="navbar-brand">Community Builders</h4>
     </div>
     <div className="collapse navbar-collapse" id="myNavbar">
