@@ -50,6 +50,19 @@ a:hover {
   color: white;
 }
 
+/* Footer*/
+
+.footer { 
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:black;
+  color: white;
+  text-align: center;
+  height: 1.5em;
+}
+
 /* charity page css*/
 
 /* Charity Profile css */
