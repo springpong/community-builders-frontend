@@ -65,12 +65,12 @@ a:hover {
 
 #NavLogo{
   float: left;
-  height: 3em;
+  height: 4em;
   width: auto;
 }
 
 .navbar {
-  padding-top: 15px;
+  padding-top: 5px;
   margin-bottom: 0;
   border-radius: 0;
 }

@@ -9,8 +9,8 @@ const Home = () => (
         <div class="col-sm-8 text-left">
           <div class="hero-image">
             <img
-              src="/src/images/toa-heftiba-_UIVmIBB3JU-unsplash.jpg"
-              alt="Nature"
+              src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+              alt="connection"
               class="responsive"
             />
             <div class="hero-text">
