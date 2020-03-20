@@ -3,14 +3,15 @@
   height: auto;
 }
 
-/* Home css */
-h1 {
-  color: white;
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 }
-body{
-    background-color:white;
-    text-align: center;
-} 
+
+/* Home css */
 
 a {
     color: rgb(133, 64, 64);
@@ -28,13 +29,10 @@ a:hover {
     color: white;
 }
 
-.row.content {
-  height: 450px;
-}
-
 .hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://lorempixel.com/g/400/200");
-  height: 90%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+  url("https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
+  height: 50%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -77,6 +75,19 @@ a:hover {
 
 .h4 {
   color: white;
+}
+
+/* Footer*/
+
+.footer { 
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:black;
+  color: white;
+  text-align: center;
+  height: 1.5em;
 }
 
 /* charity page css*/

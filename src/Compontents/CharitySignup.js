@@ -1,10 +1,13 @@
 import React, { Component } from "react";
+
 import ApiService from "../service/ApiService";
 import CharitySignupBar from "../Layout/CharitySignupBar";
+
 class CharitySignup extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      
       username: "", 
       password: "",
       charityTitle: "",
