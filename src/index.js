@@ -6,7 +6,9 @@ import CharityLogin from './Compontents/CharityLogin';
 import CharityProfile from './Compontents/CharityProfile';
 import CharityEvent from './Compontents/CharityEvent';
 import EventSignup from './Compontents/EventSignup';
+import Footer from './Layout/Footer';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
 
 
 const App = () => (
@@ -18,7 +20,9 @@ const App = () => (
       <Route exact path="/CharityProfile" component={CharityProfile} />
       <Route exact path="/CharityEvent" component={CharityEvent} />
       <Route exact path="/EventSignup" component={EventSignup} />
+      <Footer />
     </div>
+    
   </Router>
 );
  
