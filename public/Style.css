@@ -124,7 +124,7 @@ form{
   width:30%;
   margin:4% 35%;
   }
-  
+
   input{
     width:100%;
     border-radius:5px;
@@ -172,13 +172,16 @@ form{
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 90%;
+  border: 1em;
 }
+
 
 td, th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 2px;
+  border-color: black;
 }
 
 tr:nth-child(even) {
