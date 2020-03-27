@@ -4,7 +4,7 @@ export default class NavBar extends Component {
 
 
   render() {
-  return (
+  return(
     <nav className="navbar navbar-inverse">
       <div className="container-fluid">
         <div className="navbar-header">
@@ -40,11 +40,6 @@ export default class NavBar extends Component {
               <h5 className="navbar-brand">Charities</h5>
             </li>
             <li>
-              <a href="http://localhost:8081/CharitySignup" target="_self">
-                <span className="glyphicon glyphicon-user"></span> Sign Up
-              </a>
-            </li>
-            <li>
               <a href="http://localhost:8081/CharityLogin">
                 <span className="glyphicon glyphicon-log-in"></span> Login
               </a>
@@ -53,5 +48,6 @@ export default class NavBar extends Component {
         </div>
       </div>
     </nav>
-  );
+       
+    ); 
 }}

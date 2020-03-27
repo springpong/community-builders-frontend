@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import EventService from "../service/EventService";
-import CharityNavBar from "../Layout/CharityNavBar";
+import CharityEventBar from "../Layout/CharityEventBar";
 
 class CharityEvent extends Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class CharityEvent extends Component {
     this.state = {
       events: [],
       message: null
-    }; 
+    };  
     this.reloadEventsList = this.reloadEventsList.bind(this);
   }
 
@@ -26,7 +26,7 @@ class CharityEvent extends Component {
   render() {
     return (
       <div>
-        <CharityNavBar />
+        <CharityEventBar />
         <h2 className="text-center">CharityEvents </h2>
         <table className="table table-striped">
           <thead>
@@ -40,7 +40,7 @@ class CharityEvent extends Component {
               <th>Event Description</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="group">
             {this.state.events.map(events => (
               <tr key={events.id}>
                 <td>{events.charityName}</td>

@@ -6,9 +6,10 @@ import CharityLogin from './Compontents/CharityLogin';
 import CharityProfile from './Compontents/CharityProfile';
 import CharityEvent from './Compontents/CharityEvent';
 import EventSignup from './Compontents/EventSignup';
-import NavBar from "./Layout/NavBar"
-import CharityNavBar from "./Layout/CharityNavBar"
+import Login from './Compontents/Login';
+import Footer from './Layout/Footer';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
 
 const App = () => (
   <Router>
@@ -18,10 +19,11 @@ const App = () => (
       <Route exact path="/CharityLogin" component={CharityLogin} />
       <Route exact path="/CharityProfile" component={CharityProfile} />
       <Route exact path="/CharityEvent" component={CharityEvent} />
-      <Route exact path="/EventSignup" component={EventSignup}></Route>
-      <Route exact path="/NavBar" component={NavBar} />
-      <Route exact path="/CharityNavBar" component={CharityNavBar} />
+      <Route exact path="/EventSignup" component={EventSignup} />
+      <Route exact path="/Login" component={Login} />
+      <Footer />
     </div>
+    
   </Router>
 );
  
