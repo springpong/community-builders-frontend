@@ -26,14 +26,6 @@ export default class NavBar extends Component {
             <li>
               <a href="http://localhost:8080">Home</a>
             </li>
-            <li>
-              <a href="http://localhost:8080/CharityEvent">Volunteer Events</a>
-            </li>
-            <li>
-              <a href="http://localhost:8080/CharityProfile">
-                Volunteer Events
-              </a>
-            </li>
           </ul>
           <ul className="nav navbar-nav navbar-right">
             <li>

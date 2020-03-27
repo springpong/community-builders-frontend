@@ -52,7 +52,7 @@ class CharitySignup extends Component {
         <CharitySignupBar />
         <h2 className="text-center">Charity Signup</h2>
         <div className="bg-img">
-          <form action="/action_page.php" class="container">
+          <form action="/action_page.php" >
             <div className="form-group">
               <label>
                 <b>User Name:</b>
@@ -154,7 +154,7 @@ class CharitySignup extends Component {
               />
             </div>
             <button className="btn btn-success" onClick={this.saveUser}>
-              Update
+              Signup
             </button>
           </form>
         </div>

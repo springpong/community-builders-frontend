@@ -27,7 +27,7 @@ class CharityEvent extends Component {
     return (
       <div>
         <CharityEventBar />
-        <h2 className="text-center">CharityEvents </h2>
+        <h2 className="text-center">Volunteer Opportunities </h2>
         <table className="table table-striped">
           <thead>
             <tr>

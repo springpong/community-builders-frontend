@@ -14,15 +14,15 @@ class EventSignup extends Component{
             eventTime: '',
             eventDescription: '',
         }
-        this.saveUser = this.saveUser.bind(this);
+        this.saveEvent = this.saveEvent.bind(this);
     }
  
-    saveUser = (e) => {
+    saveEvent = (e) => {
         e.preventDefault();
         let events = {charityName: this.state.charityName, charityPhone: this.state.charityPhone, eventName: this.state.eventName, eventLocation: this.state.eventLocation, eventDate: this.state.eventDate, eventTime: this.state.eventTime, eventDescription: this.state.eventDescription};
         EventService.addEvents(events)
             .then(res => {
-                this.props.history.push('/CharityLogin');
+                this.props.history.push('/CharityEvent');
             })
             .catch(err => console.log(err));
     }
@@ -32,37 +32,37 @@ class EventSignup extends Component{
 
     render() {
         return(
-            <div class="container">
+            <div >
                 <CharityProfileBar />
                 <h2 className="text-center">Events Signup</h2>
                 <form>
                 <div className="form-group">
-                    <label classname="item-title">Charity Name:</label>
+                    <label className="item-title">Charity Name:</label>
                     <input type="text" name="charityName"  value={this.state.charityName} onChange={this.onChange}/>
                 </div>
 
                 <div className="form-group">
-                    <label classname="item-title">Charity Phone:</label>
+                    <label className="item-title">Charity Phone:</label>
                     <input type="text" name="charityPhone"  value={this.state.charityPhone} onChange={this.onChange}/>
                 </div>
 
                <div className="form-group">
-                    <label classname="item-title">Event Name:</label>
+                    <label className="item-title">Event Name:</label>
                     <input  type="text" name="eventName"  value={this.state.eventName} onChange={this.onChange}/>
                 </div>
                 
                 <div className="form-group">
-                    <label classname="item-title">Event Location:</label>
+                    <label className="item-title">Event Location:</label>
                     <input type="text" name="eventLocation"  value={this.state.eventLocation} onChange={this.onChange}/>
                 </div>
 
                 <div className="form-group">
-                    <label classname="item-title">Event Date:</label>
+                    <label className="item-title">Event Date:</label>
                     <input type="text" name="eventDate"  value={this.state.eventDate} onChange={this.onChange}/>
                 </div>
 
                 <div className="form-group">
-                    <label classname="item-title">Event Time:</label>
+                    <label className="item-title">Event Time:</label>
                     <br></br>
                     <select type="text"  name="eventTime"  value={this.state.eventTime} onChange={this.onChange}>
                         <option>12:00am</option>
@@ -117,7 +117,7 @@ class EventSignup extends Component{
                 </div>
 
                 <div className="form-group">
-                    <label classname="item-title">Event Description:</label>
+                    <label className="item-title">Event Description:</label>
                     <textarea type="text"  name="eventDescription"  value={this.state.eventDescription} onChange={this.onChange}/>
                 </div>
 

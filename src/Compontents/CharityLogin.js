@@ -1,53 +1,54 @@
 import React, { Component } from "react";
 import ApiService from "../service/ApiService";
-import CharitySignupBar from "../Layout/CharitySignupBar";
+import CharityLoginBar from "../Layout/CharityLoginBar";
 import Axios from "axios";
 
 class CharityLogin extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userId: "",
+      username: "", 
       password: "",
-      loginErrors: ""
+      charityTitle: "",
+      charityName: "",
+      charityCat: "",
+      charityStreet: "",
+      charityCity: "",
+      charityState: "",
+      charityZip: "",
+      charityPhone: ""
     };
+    this.getUsername = this.getUsername.bind(this);
+  } 
 
-    this.onSubmit = this.onSubmit.bind(this);
-    this.onChange = this.onChange.bind(this);
-  }
+  getUsername = e => {
+    e.preventDefault();
+    let username = {
+      username: this.state.username,
+      password: this.state.password,
+      charityTitle: this.state.charityTitle,
+      charityName: this.state.charityName,
+      charityCat: this.state.charityCat,
+      charityCity: this.state.charityCity,
+      charityStreet: this.state.charityStreet,
+      charityState: this.state.charityState,
+      charityZip: this.state.charityZip,
+      charityPhone: this.state.charityPhone
+    };
+    ApiService.fetchUser(username)
+      .then(res => {
+        this.setState({ message: "User added successfully." });
+        this.props.history.push("/CharityProfile");
+      })
+      .catch(err => console.log(err));
+  };
 
-  onChange(event) {
-    this.setState({
-      [event.target.name]: event.target.value});
-  }
-
-  onSubmit(event) {
-    const { userId, password} = this.state;
-    Axios.post("http://localhost:8081/api/charity/user/",{
-      userId,
-      password
-    },
-    console.log('sent response')
-    )
-    .then( res => {
-      let user = res.data;
-      this.setState({
-        userId: user.userId,
-        password: user.password,
-      });
-      console.log(this.state); 
-      this.props.history.push('/CharityProfile');
-    })
-      .catch(error => {
-        console.log("login error", error);
-      });
-      event.preventDefault();
-  }
+  onChange = e => this.setState({ [e.target.name]: e.target.value });
 
   render() {
     return (
       <div>
-        <CharitySignupBar />
+        <CharityLoginBar />
         <h2 className="text-center">Charity Login</h2>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">

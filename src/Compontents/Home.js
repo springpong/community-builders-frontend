@@ -5,7 +5,6 @@ const Home = () => (
   <div>
     <NavBar />
     <div className="container">
-    
           <div className="hero-image">
             <img
               src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
@@ -24,8 +23,6 @@ const Home = () => (
           </div>
         </div>
       </div>
-   
- 
 );
 
 export default Home;
