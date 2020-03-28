@@ -96,7 +96,7 @@ class CharitySignup extends Component {
             </div>
 
             <div className="form-group">
-              <label>Charity Cat:</label>
+              <label>Charity Category:</label>
               <input
                 type="text"
                 name="charityCat"
@@ -136,7 +136,7 @@ class CharitySignup extends Component {
             </div>
 
             <div className="form-group">
-              <label>Charity Zipcode:</label>
+              <label>Charity Zip Code:</label>
               <input
                 type="text"
                 name="charityZip"
@@ -153,8 +153,8 @@ class CharitySignup extends Component {
                 onChange={this.onChange}
               />
             </div>
-            <button className="btn btn-success" onClick={this.saveUser}>
-              Signup
+            <button className="btn btn-primary" onClick={this.saveUser}>
+              Create My Account
             </button>
           </form>
         </div>
