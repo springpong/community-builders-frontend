@@ -12,7 +12,7 @@ export default class CharityProfileBar extends Component {
                 <span className="icon-bar"></span>
             </button> 
             <img id="NavLogo"
-                src="https://raw.githubusercontent.com/bethel-school-of-technology/community-builders-frontend/roxine1/builders.png" />
+                src="https://github.com/bethel-school-of-technology/community-builders-frontend/blob/Resources/builders.png?raw=true" />
             <h1>Community Builders</h1>
         </div>
         <div className="collapse navbar-collapse" id="myNavbar">

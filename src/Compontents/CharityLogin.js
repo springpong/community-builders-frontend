@@ -3,6 +3,7 @@ import ApiService from "../service/ApiService";
 import Login from "./Login";
 import Axios from "axios";
 import CharitySignup from "./CharitySignup";
+import CharityView from './CharityView';
 
 class CharityLogin extends Component {
   constructor(props) {
@@ -40,6 +41,11 @@ class CharityLogin extends Component {
    onUsernameChange = (e) => this.setState({ ...this.state, username: e.target.value });
    onPasswordChange = (e) => this.setState({ ...this.state, password: e.target.value });
 
+   loadUser(username){
+    window.sessionStorage.setItem("token", token);
+    window.sessionStorage.setItem("username", username);
+  }
+
   render() {
     return (
         <header className="App-header">
@@ -48,9 +54,17 @@ class CharityLogin extends Component {
          onPasswordChange={this.onPasswordChange}
          onLogin={this.onLogin}
          error={this.state.error}></Login>)
-         : (              <a href="http://localhost:8081/CharityProfile" target="_self">
-         <span className="glyphicon glyphicon-user">Go to profile</span> 
-       </a>)}
+         : (             
+           <div>
+             <h4>Login successful</h4>
+           <a href="http://localhost:8081/CharityView" target="_self">
+         <span><button onClick ={this.loadUser}>Go to profile</button></span> 
+       </a>
+       <a href="http://localhost:8081/EventSignup" target="_self">
+         <span><button onClick ={this.loadUser}>Create an Event</button></span> 
+       </a>
+       </div>
+       )}
        </header>
     );
   }

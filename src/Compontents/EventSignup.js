@@ -13,29 +13,29 @@ class EventSignup extends Component{
             eventDate: '',
             eventTime: '',
             eventDescription: '',
-        }
-        this.saveUser = this.saveUser.bind(this);
+        };
+        this.saveEvent = this.saveEvent.bind(this);
     }
- 
-    saveUser = (e) => {
+
+    saveEvent = (e) => {
         e.preventDefault();
         let events = {charityName: this.state.charityName, charityPhone: this.state.charityPhone, eventName: this.state.eventName, eventLocation: this.state.eventLocation, eventDate: this.state.eventDate, eventTime: this.state.eventTime, eventDescription: this.state.eventDescription};
         EventService.addEvents(events)
             .then(res => {
-                this.props.history.push('/CharityLogin');
+                this.setState({ message: "Event added successfully." });
+                this.props.history.push('/CharityView');
             })
             .catch(err => console.log(err));
-    }
+    };
 
-    onChange = (e) =>
-        this.setState({[e.target.name]: e.target.value });
+    onChange = (e) => this.setState({[e.target.name]: e.target.value });
 
     render() {
         return(
-            <div class="container">
+            <div>
                 <CharityProfileBar />
                 <h2 className="text-center">Events Signup</h2>
-                <form>
+                <form action="/action_page.php">
                 <div className="form-group">
                     <label classname="item-title">Charity Name:</label>
                     <input type="text" name="charityName"  value={this.state.charityName} onChange={this.onChange}/>
@@ -121,7 +121,7 @@ class EventSignup extends Component{
                     <textarea type="text"  name="eventDescription"  value={this.state.eventDescription} onChange={this.onChange}/>
                 </div>
 
-                <button className="btn btn-success" onClick={this.saveUser}>Update</button>
+                <button className="btn btn-primary" onClick={this.saveEvent}>Create Event</button>
             </form>
     </div>
         );

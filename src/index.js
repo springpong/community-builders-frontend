@@ -5,6 +5,7 @@ import CharitySignup from './Compontents/CharitySignup';
 import CharityLogin from './Compontents/CharityLogin';
 import CharityProfile from './Compontents/CharityProfile';
 import CharityEvent from './Compontents/CharityEvent';
+import CharityView from './Compontents/CharityView';
 import EventSignup from './Compontents/EventSignup';
 import Login from './Compontents/Login';
 import Footer from './Layout/Footer';
@@ -19,6 +20,7 @@ const App = () => (
       <Route exact path="/CharityLogin" component={CharityLogin} />
       <Route exact path="/CharityProfile" component={CharityProfile} />
       <Route exact path="/CharityEvent" component={CharityEvent} />
+      <Route exact path="/CharityView" component={CharityView} />
       <Route exact path="/EventSignup" component={EventSignup} />
       <Route exact path="/Login" component={Login} />
       <Footer />

@@ -1,29 +1,29 @@
 import axios from 'axios';
 
-const USER_API_BASE_URL = 'http://localhost:8080/api/charity/events';
+const EVENT_API_BASE_URL = 'http://localhost:8080/api/charity/events';
 
-class ApiService {
+class EventService {
 
     fetchEvents() {
-        return axios.get(USER_API_BASE_URL);
+        return axios.get(EVENT_API_BASE_URL);
     }
 
     fetchUsername(username) {
-        return axios.get(USER_API_BASE_URL + '/' + username);
+        return axios.get(EVENT_API_BASE_URL + '/' + username);
     } 
 
     deleteUser(eventsId) {
-        return axios.delete(USER_API_BASE_URL + '/' + eventsId);
+        return axios.delete(EVENT_API_BASE_URL + '/' + eventsId);
     }
 
     addEvents(events) {
-        return axios.post(""+USER_API_BASE_URL, events);
+        return axios.post(""+EVENT_API_BASE_URL, events);
     }
 
     editUser(events) {
-        return axios.put(USER_API_BASE_URL + '/' + events.id, events);
+        return axios.put(EVENT_API_BASE_URL + '/' + events.id, events);
     } 
 }
 
-export default new ApiService();
+export default new EventService();
 

@@ -1,96 +1,78 @@
 import React, { Component } from "react";
 import ApiService from "../service/ApiService";
-import CharityNavBar from "../Layout/CharityNavBar";
+import CharityProfileBar from "../Layout/CharityProfileBar";
 
 class CharityView extends Component {
   constructor(props) {
     super(props);
     this.state = {
       users: [],
+      token: "",
       message: null
     };
-    this.deleteUser = this.deleteUser.bind(this);
-    this.editUser = this.editUser.bind(this);
-    this.addUser = this.addUser.bind(this);
-    this.reloadUserList = this.reloadUserList.bind(this);
-  }
-
-  componentDidMount() {
-    this.reloadUserList();
+    this.loadUser = this.loadUser.bind(this);
   }
  
-  reloadUserList() {
-    ApiService.fetchUsers()
-      .then (response => {
-        console.log(response.data);
-      this.setState({ users: response.data });
-    });
-  }
-
-  deleteUser(userId) {
-    ApiService.deleteUser(userId)
-       .then(res => {
-           this.setState({message : 'User deleted successfully.'});
-           this.setState({users: this.state.users.filter(user => user.id !== userId)});
-       })
-
+  componentDidMount() {
+    this.loadUser();
 }
 
-editUser(id) {
-    window.localStorage.setItem("userId", id);
-    this.props.history.push('/edit-user');
+loadUser() {
+    ApiService.fetchUsername(window.sessionStorage.getItem("token"))
+        .then((res) => {
+            let user = res.data.result;
+            this.setState({
+            id: user.id,
+            username: user.username,
+            })
+        });
 }
 
-addUser() {
-    window.localStorage.removeItem("userId");
-    this.props.history.push('/CharitySignup');
-}
+onChange = (e) =>
+this.setState({ [e.target.name]: e.target.value });
 
-  render() {
-    return (
+render() {
+  return (
       <div>
-        <CharityNavBar />
-        <h2 className="text-center">User Details</h2>
-        <button className="btn btn-danger" onClick={() => this.addUser()}>
-          {" "}
-          Add User
-        </button>
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th>Charity Title</th>
-              <th>Charity Name</th>
-              <th>Charity Cat</th>
-              <th>Charity Street</th>
-              <th>Charity City</th>
-              <th>Charity state</th>
-              <th>Charity Zip code</th>
-              <th>Charity Phone</th>
-              <th>Delete/Edit</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.users.map(user => (
-                <tr key={user.id}>
-                <td>{user.charityTitle}</td>
-                <td>{user.charityName}</td>
-                <td>{user.charityCat}</td>
-                <td>{user.charityStreet}</td>
-                <td>{user.charityCity}</td>
-                <td>{user.charityState}</td>
-                <td>{user.charityZip}</td>
-                <td>{user.charityPhone}</td>
-                <td>
-                <button className="btn btn-success" onClick={() => this.deleteUser(user.id)}> Delete</button>
-                <button className="btn btn-success" onClick={() => this.editUser(user.id)}> Edit</button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <CharityProfileBar />
+          <h2 className="text-center">Profile</h2>
+          <div>
+          <div className="form-group">
+                  <label>Charity Title:</label>
+                  <label name="charityTitle">{this.state.charityTitle}</label>
+              </div>
+              <div className="form-group">
+                  <label>Charity Name:</label>
+                  <label name="charityName">{this.state.charityName}</label>
+              </div>
+              <div className="form-group">
+                  <label>Charity Category:</label>
+                  <label name="charityCat">{this.state.charityCat}</label>
+              </div>
+              <div className="form-group">
+                  <label>Charity Street:</label>
+                  <label name="charityStreet">{this.state.charityStreet}</label>
+              </div>
+              <div className="form-group">
+                  <label>Charity City:</label>
+                  <label name="charityCity">{this.state.charityCity}</label>
+              </div>
+              <div className="form-group">
+                  <label>Charity State:</label>
+                  <label name="charityState">{this.state.charityState}</label>
+              </div>
+              <div className="form-group">
+                  <label>Charity Zip Code:</label>
+                  <label name="charityZip">{this.state.charityZip}</label>
+              </div>
+              <div className="form-group">
+                  <label>Charity Phone number:</label>
+                  <label name="charityPhone">{this.state.charityPhone}</label>
+              </div>
+          </div>
       </div>
-    );
-  }
+  );
+}
 }
 
 export default CharityView;

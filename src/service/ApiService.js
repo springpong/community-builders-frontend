@@ -9,12 +9,15 @@ class ApiService {
     }
 
     fetchUsername(username) {
-        return axios.post(""+USER_API_BASE_URL + '/' + username);
+        return axios.get(""+USER_API_BASE_URL + '/' + username);
     } 
 
-    fetchUser(username) {
-        return axios.post(USER_API_BASE_URL, username);
+    fetchUserById(id) {
+        return axios.post(USER_API_BASE_URL + '/' + id);
     }
+
+    fetchUser() {
+        return axios.post(USER_API_BASE_URL)}
 
     addUser(user) {
         return axios.post(""+USER_API_BASE_URL, user);

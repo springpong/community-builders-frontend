@@ -1,7 +1,7 @@
 {
   "name": "sample-app",
   "version": "1.0.0",
-  "description": "Front-end using React",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open"
@@ -19,16 +19,17 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "api": "0.0.1",
     "axios": "^0.19.2",
     "cors": "^2.8.5",
     "prop-types": "^15.7.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-native-loading-spinner-overlay": "^1.1.0",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "redux": "^3.7.0",
-    "reselect": "^3.0.1"
+    "reselect": "^3.0.1",
+    "service": "^0.1.4"
   },
   "babel": {
     "presets": [

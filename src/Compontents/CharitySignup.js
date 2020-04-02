@@ -52,7 +52,7 @@ class CharitySignup extends Component {
         <CharitySignupBar />
         <h2 className="text-center">Charity Signup</h2>
         <div className="bg-img">
-          <form action="/action_page.php" class="container">
+          <form action="/action_page.php" >
             <div className="form-group">
               <label>
                 <b>User Name:</b>
@@ -96,7 +96,7 @@ class CharitySignup extends Component {
             </div>
 
             <div className="form-group">
-              <label>Charity Cat:</label>
+              <label>Charity Category:</label>
               <input
                 type="text"
                 name="charityCat"
@@ -136,7 +136,7 @@ class CharitySignup extends Component {
             </div>
 
             <div className="form-group">
-              <label>Charity Zipcode:</label>
+              <label>Charity Zip Code:</label>
               <input
                 type="text"
                 name="charityZip"
@@ -153,8 +153,8 @@ class CharitySignup extends Component {
                 onChange={this.onChange}
               />
             </div>
-            <button className="btn btn-success" onClick={this.saveUser}>
-              Update
+            <button className="btn btn-primary" onClick={this.saveUser}>
+              Create My Account
             </button>
           </form>
         </div>
