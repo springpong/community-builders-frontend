@@ -29,40 +29,47 @@ class CharityEvent extends Component {
       <div>
         <CharityEventBar />
 
-        <div className="container">
+        <header className="display-container">
           <div className="hero-image">
             <img
-              src="/src/service/dakota-corbin-xh4mG4cqHGg-unsplash.jpg"
-              alt="bestIsYou" className="responsive"
+              src="https://github.com/bethel-school-of-technology/community-builders-frontend/raw/Resources/dakota-corbin-xh4mG4cqHGg-unsplash.jpg"
+              alt="Do Good"
+              width="100%"
+              className="responsive"
             />
-            <h2 className="text-center">Volunteer Opportunities </h2>
-            <table className="table table-striped">
-              <thead>
-                <tr>
-                  <th>Charity Name</th>
-                  <th>Charity Phone</th>
-                  <th>Event Name</th>
-                  <th>Event Location</th>
-                  <th>Event Date</th>
-                  <th>Event Time</th>
-                  <th>Event Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                {this.state.events.map(events => (
-                  <tr key={events.id}>
-                    <td>{events.charityName}</td>
-                    <td>{events.charityPhone}</td>
-                    <td>{events.eventName}</td>
-                    <td>{events.eventLocation}</td>
-                    <td>{events.eventDate}</td>
-                    <td>{events.eventTime}</td>
-                    <td>{events.eventDescription}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <div className="text-block">
+              <h2>Volunteer Opportunities</h2>
+            </div>
           </div>
+        </header>
+        
+        <div className="content">
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th>Charity Name</th>
+                <th>Charity Phone</th>
+                <th>Event Name</th>
+                <th>Event Location</th>
+                <th>Event Date</th>
+                <th>Event Time</th>
+                <th>Event Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.state.events.map(events => (
+                <tr key={events.id}>
+                  <td>{events.charityName}</td>
+                  <td>{events.charityPhone}</td>
+                  <td>{events.eventName}</td>
+                  <td>{events.eventLocation}</td>
+                  <td>{events.eventDate}</td>
+                  <td>{events.eventTime}</td>
+                  <td>{events.eventDescription}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     );

@@ -20,7 +20,7 @@ export default class NavBar extends Component {
             src="https://github.com/bethel-school-of-technology/community-builders-frontend/blob/Resources/builders.png?raw=true"
             alt="Logo"
           />
-          ;<h4 className="navbar-brand">Community Builders</h4>
+        <h4 className="navbar-brand">Community Builders</h4>
         </div>
         <div className="collapse navbar-collapse" id="myNavbar">
           <ul className="nav navbar-nav">
@@ -36,3 +36,4 @@ export default class NavBar extends Component {
     </nav>
   );
 }}
+
