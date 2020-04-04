@@ -29,13 +29,22 @@ class CharityEvent extends Component {
       <div>
         <CharityEventBar />
 
-        <div className="container">
+        <header className="display-container">
           <div className="hero-image">
             <img
-              src="/src/service/dakota-corbin-xh4mG4cqHGg-unsplash.jpg"
-              alt="bestIsYou" className="responsive"
+              src="https://github.com/bethel-school-of-technology/community-builders-frontend/raw/Resources/dakota-corbin-xh4mG4cqHGg-unsplash.jpg"
+              alt="Do Good"
+              width="100%"
+              className="responsive"
             />
-            <h2 className="text-center">Volunteer Opportunities </h2>
+
+            <div className="text-block">
+              <h2 className="text-center">Volunteer Opportunities </h2>
+            </div>
+            </div>
+          </header>
+
+          <div className="content">
             <table className="table table-striped">
               <thead>
                 <tr>
@@ -64,7 +73,7 @@ class CharityEvent extends Component {
             </table>
           </div>
         </div>
-      </div>
+     
     );
   
   }

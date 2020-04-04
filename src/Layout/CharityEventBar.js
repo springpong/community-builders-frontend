@@ -20,15 +20,32 @@ export default class NavBar extends Component {
             src="https://github.com/bethel-school-of-technology/community-builders-frontend/blob/Resources/builders.png?raw=true"
             alt="Logo"
           />
-          ;<h4 className="navbar-brand">Community Builders</h4>
+          <h4 className="navbar-brand">Community Builders</h4>
         </div>
-        <div className="collapse navbar-collapse" id="myNavbar">
+        <div className="collapse navbar-collapse">
           <ul className="nav navbar-nav">
             <li>
               <a href="http://localhost:8080">Home</a>
             </li>
             <li>
-              <a href="http://localhost:8080/CharityEvent">Volunteer Opportunties</a>
+              <a href="http://localhost:8080/CharityEvent">
+                Volunteer Opportunties
+              </a>
+            </li>
+          </ul>
+          <ul className="nav navbar-nav navbar-right">
+            <li>
+              <h5 className="navbar-brand">Charities</h5>
+            </li>
+            <li>
+              <a href="http://localhost:8080/CharitySignup" target="_self">
+                <span className="glyphicon glyphicon-user"></span> Sign Up
+              </a>
+            </li>
+            <li>
+              <a href="http://localhost:8080/CharityLogin">
+                <span className="glyphicon glyphicon-log-in"></span> Login
+              </a>
             </li>
           </ul>
         </div>
