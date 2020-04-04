@@ -37,6 +37,7 @@ class CharityEvent extends Component {
               width="100%"
               className="responsive"
             />
+<<<<<<< HEAD
 
             <div className="text-block">
               <h2 className="text-center">Volunteer Opportunities </h2>
@@ -71,7 +72,41 @@ class CharityEvent extends Component {
                 ))}
               </tbody>
             </table>
+=======
+            <div className="text-block">
+              <h2>Volunteer Opportunities</h2>
+            </div>
+>>>>>>> refs/remotes/origin/communitybuilders
           </div>
+        </header>
+        
+        <div className="content">
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th>Charity Name</th>
+                <th>Charity Phone</th>
+                <th>Event Name</th>
+                <th>Event Location</th>
+                <th>Event Date</th>
+                <th>Event Time</th>
+                <th>Event Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.state.events.map(events => (
+                <tr key={events.id}>
+                  <td>{events.charityName}</td>
+                  <td>{events.charityPhone}</td>
+                  <td>{events.eventName}</td>
+                  <td>{events.eventLocation}</td>
+                  <td>{events.eventDate}</td>
+                  <td>{events.eventTime}</td>
+                  <td>{events.eventDescription}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
      
     );

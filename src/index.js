@@ -1,15 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Home from './Compontents/Home';
-import CharitySignup from './Compontents/CharitySignup';
+import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
+
+import CharityEvent from './Compontents/CharityEvent';
 import CharityLogin from './Compontents/CharityLogin';
 import CharityProfile from './Compontents/CharityProfile';
-import CharityEvent from './Compontents/CharityEvent';
+import CharitySignup from './Compontents/CharitySignup';
 import EventSignup from './Compontents/EventSignup';
 import Footer from './Layout/Footer';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-
-
+import Home from './Compontents/Home';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 const App = () => (
   <Router>
@@ -25,5 +24,7 @@ const App = () => (
     
   </Router>
 );
- 
+
+
+
 ReactDOM.render(<App />, document.getElementById('root'));
