@@ -6,9 +6,10 @@ class CharityView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: [],
-      token: "",
-      message: null
+      user: [],
+      message: null,
+      username: localStorage.getItem("username"),
+      token: window.sessionStorage.getItem("token")
     };
     this.loadUser = this.loadUser.bind(this);
   }
@@ -18,18 +19,16 @@ class CharityView extends Component {
 }
 
 loadUser() {
-    ApiService.fetchUsername(window.sessionStorage.getItem("token"))
+    ApiService.fetchUsername(window.sessionStorage.setItem("username", this.username))
         .then((res) => {
             let user = res.data.result;
             this.setState({
             id: user.id,
             username: user.username,
+            charityTitle: user.charityTitle
             })
         });
 }
-
-onChange = (e) =>
-this.setState({ [e.target.name]: e.target.value });
 
 render() {
   return (

@@ -7,7 +7,7 @@ export default class Login extends React.Component {
       return (
         <div>
             <CharitySignupBar />
-            <div>
+            <div className="login">
            <div style={{color: "red"}}>{(this.props.error ? this.props.error: '')}</div>
            <div>
              <label htmlFor="username">Username:</label>

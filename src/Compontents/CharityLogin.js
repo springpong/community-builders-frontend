@@ -33,7 +33,7 @@ class CharityLogin extends Component {
        if (token) {
          this.setState({ ...this.state, token: token });
        } else {
-         this.setState({ ...this.state, error: "Unable to login with username and password." });
+         this.setState({ ...this.state, error: "Incorrect username and/or password." });
        }
      });
    }

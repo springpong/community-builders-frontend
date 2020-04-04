@@ -119,6 +119,11 @@ form{
   margin:4% 35%;
   }
 
+  .login{
+    width:30%;
+    margin:4% 35%;
+    }
+
   input{
     width:100%;
     border-radius:5px;
